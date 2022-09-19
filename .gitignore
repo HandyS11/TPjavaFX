@@ -1,5 +1,4 @@
-*.idea
-*/out
+*/out/
 
 # ---> Java
 # Compiled class file
