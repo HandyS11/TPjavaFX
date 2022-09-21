@@ -1,20 +1,27 @@
 package model;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+
+import java.util.Random;
+
 public class Dice {
 
-    private int value;
     private int nbFaces;
+    private Random random = new Random();
 
     public Dice(int nbFaces) {
         this.nbFaces = nbFaces;
     }
 
-    public int getValue() {
-        return value;
-    }
+    private IntegerProperty diceValue = new SimpleIntegerProperty();
+        public int getDiceValue() { return diceValue.get(); }
+        public IntegerProperty diceValueProperty() { return diceValue; }
+        public void setDiceValue(int diceValue) { this.diceValue.set(diceValue); }
 
     public int roll() {
-        value = (int) (Math.random() * nbFaces);
-        return value;
+        setDiceValue(random.nextInt(nbFaces)+1);
+        System.out.println(getDiceValue());
+        return getDiceValue();
     }
 }
