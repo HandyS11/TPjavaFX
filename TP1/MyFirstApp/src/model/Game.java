@@ -114,19 +114,45 @@ public class Game {
     }
 
     private void resetDice() {
-        setDice0(false);
-        setDice1(false);
-        setDice2(false);
-        setDice3(false);
-        setDice4(false);
-        setDice5(false);
-        setDice6(false);
+        dice0.set(false);
+        dice1.set(false);
+        dice2.set(false);
+        dice3.set(false);
+        dice4.set(false);
+        dice5.set(false);
+        dice6.set(false);
     }
 
     private void throwDice(int value) {
+        resetDice();
         switch (value) {
             case 1 -> {
-                // ..
+                dice0.set(true);
+            } case 2 -> {
+                dice3.set(true);
+                dice4.set(true);
+            } case 3 -> {
+                dice0.set(true);
+                dice1.set(true);
+                dice6.set(true);
+            } case 4 -> {
+                dice1.set(true);
+                dice3.set(true);
+                dice4.set(true);
+                dice6.set(true);
+            } case 5 -> {
+                dice0.set(true);
+                dice1.set(true);
+                dice3.set(true);
+                dice4.set(true);
+                dice6.set(true);
+            } case 6 -> {
+                dice1.set(true);
+                dice2.set(true);
+                dice3.set(true);
+                dice4.set(true);
+                dice5.set(true);
+                dice6.set(true);
             }
         }
     }

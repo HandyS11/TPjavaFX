@@ -21,7 +21,6 @@ public class Dice {
 
     public int roll() {
         setDiceValue(random.nextInt(nbFaces)+1);
-        System.out.println(getDiceValue());
         return getDiceValue();
     }
 }
