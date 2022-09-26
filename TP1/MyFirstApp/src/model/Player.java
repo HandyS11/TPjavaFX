@@ -13,7 +13,6 @@ public class Player {
         dice = new Dice(nbFaces);
     }
 
-
     public Dice getDice() {
         return dice;
     }

@@ -28,6 +28,10 @@ public class Game {
         return players;
     }
 
+    public Player returnOtherPlayer(Player p) {
+        return (p.equals(players.get(0))) ? players.get(1) : players.get(0);
+    }
+
     ObservableList<Score> scoresObs = FXCollections.observableList(new ArrayList<Score>());
     private ListProperty<Score> scores = new SimpleListProperty<Score>(scoresObs);
         public ObservableList<Score> getScores() { return scores.get(); }
@@ -45,35 +49,30 @@ public class Game {
         public void setGameWinner(String gameWinner) { this.gameWinner.set(gameWinner); }
 
 
-    public void play(int playerThatStoppedTheGame) {
-        Player p = players.get(playerThatStoppedTheGame - 1);
+    public void play(Player p) {
         Dice dice = p.getDice();
         int value = dice.roll();
         if (value == 1) {
-            whoWon();
+            whoWon(p);
         } else {
             p.setPlayerScore(p.getPlayerScore() + value);
         }
     }
 
-    private void whoWon() {
-        Player p1 = players.get(0);
-        Player p2 = players.get(1);
-        String str = new String();
+    private void whoWon(Player p) {
+        Player other = returnOtherPlayer(p);
+        String str;
 
-        // J'ai jamais rien écris d'aussi dégeulasse mais idk comment faire ça mieux
-        if (p1.getPlayerScore() == p2.getPlayerScore()) {
+        if (p.getPlayerScore() == other.getPlayerScore()) {
             str = "This is a draw!";
-            logScore("Draw", p1.getPlayerScore(),  p1.getPlayerScore());
-        } else if(p1.getPlayerScore() > p2.getPlayerScore()) {
-            str = p1.getPlayerName() + " won!";
-            logScore(p1.getPlayerName(), p1.getPlayerScore(),  p2.getPlayerScore());
+            logScore("Draw", p.getPlayerScore(),  p.getPlayerScore());
+        } else if (p.getPlayerScore() > other.getPlayerScore()) {
+            str = p.getPlayerName() + " won!";
+            logScore(p.getPlayerName(), p.getPlayerScore(),  other.getPlayerScore());
         } else {
-            str = p2.getPlayerName() + " won!";
-            logScore(p2.getPlayerName(), p2.getPlayerScore(),  p1.getPlayerScore());
+            str = other.getPlayerName() + " won!";
+            logScore(other.getPlayerName(), other.getPlayerScore(),  p.getPlayerScore());
         }
-        // fin du truc horrible
-
         setGameWinner(str);
         setGameRunning(false);
     }
