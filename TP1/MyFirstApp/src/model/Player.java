@@ -7,6 +7,17 @@ import javafx.beans.property.StringProperty;
 
 public class Player {
 
+    private Dice dice;
+
+    public Player(int nbFaces) {
+        dice = new Dice(nbFaces);
+    }
+
+
+    public Dice getDice() {
+        return dice;
+    }
+
     private StringProperty playerName = new SimpleStringProperty();
         public String getPlayerName() { return playerName.get(); }
         public StringProperty playerNameProperty() { return playerName; }

@@ -1,11 +1,15 @@
 package view;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ListView;
 import javafx.scene.shape.Circle;
 import model.Game;
 import model.Player;
+import model.Score;
+import view.part.ScoreCell;
 
 public class MainWindow {
 
@@ -15,28 +19,13 @@ public class MainWindow {
     private Circle dice0, dice1, dice2, dice3, dice4, dice5, dice6;
 
     @FXML
-    private Label playerName1;
+    private Label playerName1, playerName2, gameStatus, scoreJ1, scoreJ2;
 
     @FXML
-    private Label playerName2;
+    private Button throwPlayer1, throwPlayer2, playAgainButton;
 
     @FXML
-    private Label gameStatus;
-
-    @FXML
-    private Label scoreJ1;
-
-    @FXML
-    private Label scoreJ2;
-
-    @FXML
-    private Button throwPlayer1;
-
-    @FXML
-    private Button throwPlayer2;
-
-    @FXML
-    private Button playAgainButton;
+    private ListView listScore;
 
     @FXML
     private void player1throw() {
@@ -51,6 +40,16 @@ public class MainWindow {
     @FXML
     private void playAgain() {
         game.playAgain();
+    }
+
+    @FXML
+    private void deleteSelected() {
+        game.removeScore((Score) listScore.getSelectionModel().getSelectedItem());
+    }
+
+    @FXML
+    private void deleteAll() {
+        game.clearScores();
     }
 
 
@@ -72,12 +71,15 @@ public class MainWindow {
         throwPlayer1.disableProperty().bind(game.gameRunningProperty().not());
         throwPlayer2.disableProperty().bind(game.gameRunningProperty().not());
 
-        dice0.visibleProperty().bind(game.dice0Property());
-        dice1.visibleProperty().bind(game.dice1Property());
-        dice2.visibleProperty().bind(game.dice2Property());
-        dice3.visibleProperty().bind(game.dice3Property());
-        dice4.visibleProperty().bind(game.dice4Property());
-        dice5.visibleProperty().bind(game.dice5Property());
-        dice6.visibleProperty().bind(game.dice6Property());
+        listScore.itemsProperty().bind(game.scoresProperty());
+        listScore.setCellFactory(__ -> new ScoreCell());
+
+        dice0.visibleProperty().bind(game.getPlayers().get(0).getDice().dice0Property());
+        dice1.visibleProperty().bind(game.getPlayers().get(0).getDice().dice1Property());
+        dice2.visibleProperty().bind(game.getPlayers().get(0).getDice().dice2Property());
+        dice3.visibleProperty().bind(game.getPlayers().get(0).getDice().dice3Property());
+        dice4.visibleProperty().bind(game.getPlayers().get(0).getDice().dice4Property());
+        dice5.visibleProperty().bind(game.getPlayers().get(0).getDice().dice5Property());
+        dice6.visibleProperty().bind(game.getPlayers().get(0).getDice().dice6Property());
     }
 }
