@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -9,14 +10,23 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
-<fx:root fx:id="playerGui" type="Pane" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="playerGui" type="Pane" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <VBox alignment="CENTER" prefHeight="300" prefWidth="300">
         <children>
-            <Label fx:id="playerName" text="Player" />
-            <Label fx:id="playerScore" text="0" />
-            <StackPane prefHeight="150.0" prefWidth="200.0">
+            <Label fx:id="playerName" text="Player">
+            <font>
+               <Font size="15.0" />
+            </font></Label>
+            <Label fx:id="playerScore" text="0">
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin></Label>
+            <StackPane prefHeight="150.0">
                 <children>
+               <Rectangle fx:id="squareDice" arcHeight="25.0" arcWidth="25.0" fill="#dad2bb" height="150.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" width="150.0" />
                     <GridPane alignment="CENTER" hgap="25.0">
                         <columnConstraints>
                             <ColumnConstraints halignment="CENTER" prefWidth="50.0" />
@@ -38,8 +48,14 @@
                     </GridPane>
                     <Circle fx:id="dice0" fill="DODGERBLUE" radius="18.0" stroke="BLACK" strokeType="INSIDE" />
                 </children>
+            <VBox.margin>
+               <Insets bottom="10.0" top="10.0" />
+            </VBox.margin>
             </StackPane>
-            <Button fx:id="throwPlayer" onAction="#playerThrow" text="Throw" />
+            <Button fx:id="throwPlayer" onAction="#playerThrow" text="Throw">
+            <VBox.margin>
+               <Insets top="10.0" />
+            </VBox.margin></Button>
         </children>
     </VBox>
 </fx:root>

@@ -65,13 +65,13 @@ public class Game {
 
         if (p.getPlayerScore() == other.getPlayerScore()) {
             str = "This is a draw!";
-            logScore("Draw", p.getPlayerScore(),  p.getPlayerScore());
+            logScore(p.getPlayerName(), other.getPlayerName(), p.getPlayerScore(),  other.getPlayerScore());
         } else if (p.getPlayerScore() > other.getPlayerScore()) {
             str = p.getPlayerName() + " won!";
-            logScore(p.getPlayerName(), p.getPlayerScore(),  other.getPlayerScore());
+            logScore(p.getPlayerName(), other.getPlayerName(), p.getPlayerScore(),  other.getPlayerScore());
         } else {
             str = other.getPlayerName() + " won!";
-            logScore(other.getPlayerName(), other.getPlayerScore(),  p.getPlayerScore());
+            logScore(other.getPlayerName(), p.getPlayerName(), other.getPlayerScore(),  p.getPlayerScore());
         }
         setGameWinner(str);
         setGameRunning(false);
@@ -86,8 +86,8 @@ public class Game {
         setGameRunning(true);
     }
 
-    private void logScore(String winner, int winnerScore, int looserScore) {
-        scoresObs.add(new Score(winner, winnerScore, looserScore));
+    private void logScore(String winner, String looser, int winnerScore, int looserScore) {
+        scoresObs.add(new Score(winner, looser, winnerScore, looserScore));
     }
 
     public void clearScores() {

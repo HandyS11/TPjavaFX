@@ -7,15 +7,20 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Circle;
+import javafx.scene.shape.Rectangle;
 import model.Player;
 import view.MainWindow;
 
 import java.io.IOException;
 
-public class PlayerGui extends VBox {
+
+public class GuiPlayer extends VBox {
 
     @FXML
     private Circle dice0, dice1, dice2, dice3, dice4, dice5, dice6;
+
+    @FXML
+    private Rectangle squareDice;
 
     @FXML
     private Button throwPlayer;
@@ -30,10 +35,10 @@ public class PlayerGui extends VBox {
 
     private Player player;
 
-    public PlayerGui(Player player) {
+    public GuiPlayer(Player player) {
         this.player = player;
 
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/UC/PLayerGui.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/FXML/UC/PlayerGui.fxml"));
         loader.setRoot(this);
         loader.setController(this);
 
@@ -49,6 +54,8 @@ public class PlayerGui extends VBox {
         playerScore.textProperty().bind(player.playerScoreProperty().asString());
 
         throwPlayer.disableProperty().bind(MainWindow.game.gameRunningProperty().not());
+
+        squareDice.visibleProperty().bind(player.getDice().diceValueProperty().isNotEqualTo(0));
 
         Circle[] dices = { dice0, dice1, dice2, dice3, dice4, dice5, dice6 };
 
