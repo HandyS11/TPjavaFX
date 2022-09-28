@@ -80,7 +80,7 @@ public class Game {
     public void playAgain() {
         players.forEach((player -> {
             player.setPlayerScore(0);
-            player.getDice().resetDice();
+            player.getDice().setDiceValue(0);
         }));
         setGameWinner("No winner yet!");
         setGameRunning(true);
