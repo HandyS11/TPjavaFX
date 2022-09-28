@@ -5,9 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="275d2962-6738-490a-acc9-eca784255958" name="Changes" comment="Add visual dice">
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/BirdCollector.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/rsrc/FXML/MainWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/src/data/IDataLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/src/data/Stub.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/src/launch/Launcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/src/model/Bird.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/src/model/Manager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/src/view/MainWindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/src/view/part/BirdCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Dice.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +50,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;/home/UCA/vaclergue/licence/Java/TPjavaFX/TP1/MyFirstApp&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/rsrc" />

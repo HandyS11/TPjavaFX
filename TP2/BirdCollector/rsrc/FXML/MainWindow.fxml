@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindow" >
+   <top>
+      <HBox BorderPane.alignment="CENTER">
+         <children>
+            <Label text="DATE: "/>
+            <Label fx:id="dateLabel" />
+            <Button text="Next Day" onAction="#nextDay" />
+         </children>
+      </HBox>
+   </top>
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Name: " />
+            <Label fx:id="birdNameLabel" />
+            <Label text="Wings color: " />
+            <Label fx:id="birdWingsColorLabel" />
+            <Label text="Time since last meal: " />
+            <Label fx:id="birdTimeSinceLastMealLabel" />
+            <Button text="Feed bird" onAction="#feedBird" />
+         </children>
+      </VBox>
+   </center>
+   <left>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <ListView fx:id="birdListView" />
+            <Button text="Add Bird" onAction="#addBird" />
+         </children>
+      </VBox>
+   </left>
+</BorderPane>
