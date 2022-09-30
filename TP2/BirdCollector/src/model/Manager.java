@@ -35,7 +35,7 @@ public class Manager {
     }
 
     public void addBirdToCollection() {
-            birdsObs.add(new Bird("Bird", "N/A"));
+            birdsObs.add(new Bird("Bird", "N/A", 3));
     }
 
     public void deleteBirdFromCollection(int index) { birdsObs.remove(index); }

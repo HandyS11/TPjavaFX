@@ -1,11 +1,9 @@
 package model;
 
-import javafx.beans.property.ObjectProperty;
-import javafx.beans.property.SimpleObjectProperty;
-import javafx.beans.property.SimpleStringProperty;
-import javafx.beans.property.StringProperty;
+import javafx.beans.property.*;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 public class Bird {
 
@@ -25,9 +23,21 @@ public class Bird {
         public ObjectProperty<LocalDate> dateProperty() { return date; }
         public void setDate(LocalDate date) { this.date.set(date); }
 
-    public Bird(String name, String wingsColor) {
+    private IntegerProperty hungerStrenght = new SimpleIntegerProperty();
+        public int getHungerStrenght() { return hungerStrenght.get(); }
+        public IntegerProperty hungerStrenghtProperty() { return hungerStrenght; }
+        public void setHungerStrenght(int hungerStrenght) { this.hungerStrenght.set(hungerStrenght); }
+
+    private  IntegerProperty timeSinceLastMeal = new SimpleIntegerProperty();
+        public int getTimeSinceLastMeal() { return timeSinceLastMeal.get(); }
+        public IntegerProperty timeSinceLastMealProperty() { return timeSinceLastMeal; }
+        public void setTimeSinceLastMeal(LocalDate date) { this.timeSinceLastMeal.set(Period.between(getDate(), date).getDays()); }
+
+    public Bird(String name, String wingsColor, int hungerStrenght) {
         setName(name);
         setWingsColor(wingsColor);
+        setHungerStrenght(hungerStrenght);
         setDate(LocalDate.now());
+        setTimeSinceLastMeal(LocalDate.now());
     }
 }

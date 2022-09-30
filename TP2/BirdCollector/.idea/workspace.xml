@@ -4,6 +4,7 @@
     <list default="true" id="7d5e7892-8001-4c97-98bc-134230ea963e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Stub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Stub.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Bird.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Bird.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Manager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Manager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
@@ -18,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
