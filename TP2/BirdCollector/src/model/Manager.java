@@ -37,4 +37,10 @@ public class Manager {
     public void addBirdToCollection() {
             birdsObs.add(new Bird("Bird", "N/A"));
     }
+
+    public void deleteBirdFromCollection(int index) { birdsObs.remove(index); }
+
+    public void addDay() { setDate(getDate().plusDays(1)); }
+
+    public void feedTheBird(int index) { birdsObs.get(index).setDate(getDate()); }
 }
