@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d5e7892-8001-4c97-98bc-134230ea963e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/model/Color.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/viewmodel/BirdVM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/viewmodel/CollectionVM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +32,7 @@
     <setting file="file://$PROJECT_DIR$/src/data/Stub.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/launch/Launcher.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/model/Bird.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/model/Manager.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/Collection.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/view/MainWindow.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/view/part/BirdCell.java" root0="FORCE_HIGHLIGHTING" />
   </component>
