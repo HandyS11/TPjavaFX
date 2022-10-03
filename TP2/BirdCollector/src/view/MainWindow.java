@@ -76,7 +76,7 @@ public class MainWindow {
             if (oldValue != null) {
                 birdName.textProperty().unbindBidirectional(oldValue.nameProperty());
                 birdWingsColor.textProperty().unbindBidirectional(oldValue.wingsColorProperty());
-                hungerStrength.textProperty().unbindBidirectional(oldValue.hungerStrenghtProperty());
+                hungerStrength.textProperty().unbindBidirectional(oldValue.hungerStrengthProperty());
             }
             if (newValue != null) {
                 bind(newValue);
@@ -87,7 +87,7 @@ public class MainWindow {
     private void bind(Bird newValue) {
         birdName.textProperty().bindBidirectional(newValue.nameProperty());
         birdWingsColor.textProperty().bindBidirectional(newValue.wingsColorProperty());
-        hungerStrength.textProperty().bindBidirectional(newValue.hungerStrenghtProperty(), new NumberStringConverter());
+        hungerStrength.textProperty().bindBidirectional(newValue.hungerStrengthProperty(), new NumberStringConverter());
         lastMealLabel.textProperty().bind(newValue.dateProperty().asString());
         timeSinceLastMealLabel.textProperty().bind(newValue.timeSinceLastMealProperty().asString());
     }

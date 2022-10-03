@@ -23,20 +23,32 @@ public class Bird {
         public ObjectProperty<LocalDate> dateProperty() { return date; }
         public void setDate(LocalDate date) { this.date.set(date); }
 
-    private IntegerProperty hungerStrenght = new SimpleIntegerProperty();
-        public int getHungerStrenght() { return hungerStrenght.get(); }
-        public IntegerProperty hungerStrenghtProperty() { return hungerStrenght; }
-        public void setHungerStrenght(int hungerStrenght) { this.hungerStrenght.set(hungerStrenght); }
+    private IntegerProperty hungerStrength = new SimpleIntegerProperty();
+        public int getHungerStrength() { return hungerStrength.get(); }
+        public IntegerProperty hungerStrengthProperty() { return hungerStrength; }
+        public void setHungerStrength(int hungerStrength) { this.hungerStrength.set(hungerStrength); }
 
-    private  IntegerProperty timeSinceLastMeal = new SimpleIntegerProperty();
+    private IntegerProperty timeSinceLastMeal = new SimpleIntegerProperty();
         public int getTimeSinceLastMeal() { return timeSinceLastMeal.get(); }
         public IntegerProperty timeSinceLastMealProperty() { return timeSinceLastMeal; }
-        public void setTimeSinceLastMeal(LocalDate date) { this.timeSinceLastMeal.set(Period.between(getDate(), date).getDays()); }
+        public void setTimeSinceLastMeal(LocalDate date) {
+            this.timeSinceLastMeal.set(Period.between(getDate(), date).getDays());
+            if (Period.between(getDate(), date).getDays() > getHungerStrength()) {
+                setNeedEat(true);
+            } else {
+                setNeedEat(false);
+            }
+        }
 
-    public Bird(String name, String wingsColor, int hungerStrenght) {
+    private BooleanProperty needEat = new SimpleBooleanProperty(false);
+        public boolean isNeedEat() { return needEat.get(); }
+        public BooleanProperty needEatProperty() { return needEat; }
+        public void setNeedEat(boolean needEat) { this.needEat.set(needEat); }
+
+    public Bird(String name, String wingsColor, int hungerStrength) {
         setName(name);
         setWingsColor(wingsColor);
-        setHungerStrenght(hungerStrenght);
+        setHungerStrength(hungerStrength);
         setDate(LocalDate.now());
         setTimeSinceLastMeal(LocalDate.now());
     }
