@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
+<VBox fx:id="perfumeUC" xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="view.PerfumeUC">
+    <children>
+        <fx:include source="ItemUC.fxml" />
+        <ListView fx:id="fragrancesListView" />
+        <HBox>
+            <children>
+                <TextField fx:id="smellTextField" />
+                <Button text="Add" onAction="#addSmell" />
+                <Button text="Remove" onAction="#removeSmell" />
+                <Button text="Deselect" onAction="#deselectSmell" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

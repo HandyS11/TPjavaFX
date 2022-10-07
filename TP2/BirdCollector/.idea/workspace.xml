@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d5e7892-8001-4c97-98bc-134230ea963e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/BackOffice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/MainWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/launch/Launcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TP3/BirdCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP3/BirdCollector/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,11 +52,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "/home/UCA/vaclergue/licence/Java/TPjavaFX/TP3/BirdCollector"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;/home/UCA/vaclergue/licence/Java/TPjavaFX/TP3/BirdCollector&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />

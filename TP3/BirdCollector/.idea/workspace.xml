@@ -2,11 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d5e7892-8001-4c97-98bc-134230ea963e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/model/Color.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/viewmodel/BirdVM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/viewmodel/CollectionVM.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/BackOffice.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/MainWindow.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/launch/Launcher.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Clothes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Parfum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Products.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +41,11 @@
     <setting file="file://$PROJECT_DIR$/src/launch/Launcher.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/model/Bird.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/model/Collection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/model/Color.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/view/MainWindow.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/view/part/BirdCell.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/viewmodel/CollectionVM.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/viewmodel/ColorVM.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,11 +58,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "last_opened_file_path": "/home/UCA/vaclergue/licence/Java/TPjavaFX/TP3/BirdCollector"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
