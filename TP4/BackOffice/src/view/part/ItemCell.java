@@ -10,7 +10,6 @@ public class ItemCell extends ListCell<ItemVM> {
         super.updateItem(item, empty);
         if (!empty) {
             this.textProperty().bind(item.nameProperty());
-
         } else {
             this.textProperty().unbind();
             this.setText("");

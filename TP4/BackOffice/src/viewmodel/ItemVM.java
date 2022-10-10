@@ -17,4 +17,8 @@ public abstract class ItemVM {
         public IntegerProperty priceProperty() { return price; }
         public void setPrice(int price) { this.price.set(price); }
 
+    public ItemVM(String name, int price) {
+        setName(name);
+        setPrice(price);
+    }
 }

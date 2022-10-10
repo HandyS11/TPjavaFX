@@ -10,7 +10,7 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.MainWindow">
    <left>
-      <VBox alignment="CENTER" BorderPane.alignment="CENTER">
+      <VBox alignment="TOP_CENTER" BorderPane.alignment="TOP_CENTER">
          <children>
             <ChoiceBox fx:id="choiceBox" />
             <ListView fx:id="itemsListView">

@@ -1,9 +1,15 @@
 package model;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 public class Products {
+
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+    public static final UUID itemsID = UUID.randomUUID();
 
     private List<Item> items;
 
@@ -15,15 +21,13 @@ public class Products {
         return Collections.unmodifiableList(items);
     }
 
-    public void addItems(List<Item> items) {
-        items.forEach((item -> addItem(item, -1)));
+    public void addItem(Item item, int index) {
+        Item i = items.get(index);
+        items.add(index, item);
+        support.fireIndexedPropertyChange(String.valueOf(itemsID), index, i, item);
     }
 
-    public void addItem(Item item, int index) {
-        if (index == -1) {
-            items.add(item);
-        } else {
-            items.add(index, item);
-        }
+    public void addListener(PropertyChangeListener propertyChangeListener) {
+        support.addPropertyChangeListener(propertyChangeListener);
     }
 }
