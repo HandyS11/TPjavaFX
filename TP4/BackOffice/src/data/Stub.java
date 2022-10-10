@@ -1,11 +1,12 @@
 package data;
 
 import model.*;
+import utils.Sizes;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Stub implements IDataloader {
+public class Stub implements IDataLoader {
 
     @Override
     public List<Item> load() {

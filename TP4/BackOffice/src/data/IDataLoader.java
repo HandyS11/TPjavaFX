@@ -4,7 +4,7 @@ import model.Item;
 
 import java.util.List;
 
-public interface IDataloader {
+public interface IDataLoader {
 
     List<Item> load();
 }

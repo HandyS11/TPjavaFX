@@ -1,9 +1,13 @@
 package view;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.control.ListView;
+import javafx.scene.layout.VBox;
 
-public class PerfumeUC {
+import java.io.IOException;
+
+public class PerfumeUC extends VBox {
 
     @FXML
     private ListView<String> fragrancesListView;
@@ -18,6 +22,13 @@ public class PerfumeUC {
 
     @FXML
     private void deselectSmell() {
+    }
+
+    public PerfumeUC() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/UC/PerfumeUC.fxml"));
+        fxmlLoader.setRoot(this);
+        fxmlLoader.setController(this);
+        fxmlLoader.load();
     }
 
     public void initialize() {

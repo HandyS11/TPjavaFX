@@ -4,7 +4,10 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
-import viewmodel.ItemVM;
+import javafx.scene.layout.VBox;
+import viewmodel.ProductsVM;
+
+import java.io.IOException;
 
 public class MainWindow {
 
@@ -14,9 +17,8 @@ public class MainWindow {
     @FXML
     private Pane details;
 
-
     @FXML
-    private ListView<ItemVM> itemsListView;
+    private ListView<ProductsVM> itemsListView;
 
     @FXML
     private void addPerfume() {
@@ -30,7 +32,19 @@ public class MainWindow {
     private void deleteSelected() {
     }
 
+    private VBox perfumeUC;
+    private VBox clothesUC;
+
     public void initialize() {
-        //choiceBox.getItems().addAll("item1", "item2", "item3");
+        choiceBox.getItems().addAll("ALL", "Perfume", "Clothes");
+        choiceBox.getSelectionModel().select(0);
+
+        try {
+            perfumeUC = new PerfumeUC();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        details.getChildren().add(perfumeUC);
     }
 }
