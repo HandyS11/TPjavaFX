@@ -8,7 +8,7 @@ import model.Perfume;
 
 import java.util.ArrayList;
 
-public class PerfumeVM {
+public class PerfumeVM extends ItemVM {
 
     private Perfume model;
 

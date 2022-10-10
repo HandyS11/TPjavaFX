@@ -5,7 +5,8 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import viewmodel.ProductsVM;
+import view.part.ItemCell;
+import viewmodel.ItemVM;
 
 import java.io.IOException;
 
@@ -18,7 +19,7 @@ public class MainWindow {
     private Pane details;
 
     @FXML
-    private ListView<ProductsVM> itemsListView;
+    private ListView<ItemVM> itemsListView;
 
     @FXML
     private void addPerfume() {
@@ -41,10 +42,21 @@ public class MainWindow {
 
         try {
             perfumeUC = new PerfumeUC();
+            clothesUC = new ClothesUC();
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+        details.getChildren().add(clothesUC);
 
-        details.getChildren().add(perfumeUC);
+
+        itemsListView.getSelectionModel().selectedItemProperty().addListener((__, oldV, newV) -> {
+            if (oldV != null) {
+                //
+            }
+            if (newV != null) {
+                //
+            }
+        });
+        itemsListView.setCellFactory(__ -> new ItemCell());
     }
 }

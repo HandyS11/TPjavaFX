@@ -9,7 +9,7 @@ import utils.Sizes;
 
 import java.util.ArrayList;
 
-public class ClothesVM {
+public class ClothesVM extends ItemVM {
 
     private Clothes model;
 

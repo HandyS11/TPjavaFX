@@ -15,4 +15,8 @@ public class Perfume extends Item {
     public List<String> getFlagrance() {
         return Collections.unmodifiableList(flagrance);
     }
+
+    public void addFlagrance(String str) {
+        flagrance.add(str);
+    }
 }

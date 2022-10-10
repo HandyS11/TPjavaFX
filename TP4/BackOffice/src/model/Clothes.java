@@ -16,12 +16,27 @@ public class Clothes extends Item {
         this.sizes = sizes;
     }
 
-
     public List<Color> getColors() {
         return Collections.unmodifiableList(colors);
     }
 
     public List<Sizes> getSizes() {
         return Collections.unmodifiableList(sizes);
+    }
+
+    public void addColor(Color color) {
+        colors.add(color);
+    }
+
+    public void removeColor(Color color) {
+        colors.remove(color);
+    }
+
+    public void addSize(Sizes size) {
+        sizes.add(size);
+    }
+
+    public void removeSize(Sizes size) {
+        sizes.remove(size);
     }
 }

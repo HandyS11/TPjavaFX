@@ -24,6 +24,11 @@ public class PerfumeUC extends VBox {
     private void deselectSmell() {
     }
 
+    @FXML
+    private VBox perfumeUC;
+
+    private VBox itemUC;
+
     public PerfumeUC() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/UC/PerfumeUC.fxml"));
         fxmlLoader.setRoot(this);
@@ -32,6 +37,12 @@ public class PerfumeUC extends VBox {
     }
 
     public void initialize() {
+        try {
+            itemUC = new ItemUC();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
 
+        perfumeUC.getChildren().add(0, itemUC);
     }
 }

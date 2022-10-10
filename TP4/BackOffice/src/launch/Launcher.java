@@ -13,7 +13,7 @@ public class Launcher extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("/FXML/MainWindow.fxml"));
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
-        primaryStage.setTitle("Bird Collector");
+        primaryStage.setTitle("BackOffice");
         primaryStage.show();
     }
 }

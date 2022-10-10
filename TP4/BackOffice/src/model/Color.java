@@ -4,13 +4,13 @@ public class Color {
 
     private int red;
     private int green;
-    private int bleu;
+    private int blue;
 
 
-    public Color(int red, int green, int bleu) {
-        this.red = red;
-        this.green = green;
-        this.bleu = bleu;
+    public Color(double red, double green, double blue) {
+        this.red = (int) red*255;
+        this.green = (int) green*255;
+        this.blue = (int) blue*255;
     }
 
 
@@ -23,6 +23,12 @@ public class Color {
     }
 
     public int getBleu() {
-        return bleu;
+        return blue;
+    }
+
+    public void editColor(int red, int green, int blue) {
+        this.red = (int) red*255;
+        this.green = (int) green*255;
+        this.blue = (int) blue*255;
     }
 }

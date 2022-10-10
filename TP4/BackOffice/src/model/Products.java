@@ -14,4 +14,16 @@ public class Products {
     public List<Item> getItems() {
         return Collections.unmodifiableList(items);
     }
+
+    public void addItems(List<Item> items) {
+        items.forEach((item -> addItem(item, -1)));
+    }
+
+    public void addItem(Item item, int index) {
+        if (index == -1) {
+            items.add(item);
+        } else {
+            items.add(index, item);
+        }
+    }
 }
