@@ -6,9 +6,12 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Perfume;
 
+import java.beans.IndexedPropertyChangeEvent;
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
-public class PerfumeVM extends ItemVM {
+public class PerfumeVM extends ItemVM implements PropertyChangeListener {
 
     private Perfume model;
 
@@ -22,5 +25,15 @@ public class PerfumeVM extends ItemVM {
     public PerfumeVM(Perfume perfume) {
         super(perfume.getName(), perfume.getPrice());
         perfume.getFlagrance().forEach((flagrance -> fragrances.add(flagrance)));
+        model = perfume;
+        model.addListener(this);
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
+        if (e.getPropagationId() == Perfume.flagranceID) {
+            fragrances.set(e.getIndex(), ((String) e.getNewValue()));
+        }
     }
 }

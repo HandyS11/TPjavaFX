@@ -10,6 +10,7 @@ import model.Clothes;
 import model.Perfume;
 import model.Products;
 
+import java.beans.IndexedPropertyChangeEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
@@ -50,11 +51,12 @@ public class ProductsVM implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        if (evt.getPropagationId() == itemsID) {
-            if (evt.getNewValue() instanceof Clothes) {
-                items.add(new ClothesVM((Clothes) evt.getNewValue()));
+        IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
+        if (e.getPropagationId() == itemsID) {
+            if (e.getNewValue() instanceof Clothes) {
+                items.set(e.getIndex(), new ClothesVM((Clothes) e.getNewValue()));
             } else if (evt.getNewValue() instanceof Perfume) {
-                items.add(new PerfumeVM((Perfume) evt.getNewValue()));
+                items.set(e.getIndex() ,new PerfumeVM((Perfume) e.getNewValue()));
             }
         }
     }

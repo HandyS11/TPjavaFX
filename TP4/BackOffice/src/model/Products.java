@@ -27,6 +27,12 @@ public class Products {
         support.fireIndexedPropertyChange(String.valueOf(itemsID), index, i, item);
     }
 
+    public void removeItem(int index) {
+        Item i = items.get(index);
+        items.remove(index);
+        support.fireIndexedPropertyChange(String.valueOf(itemsID), index, i, null);
+    }
+
     public void addListener(PropertyChangeListener propertyChangeListener) {
         support.addPropertyChangeListener(propertyChangeListener);
     }

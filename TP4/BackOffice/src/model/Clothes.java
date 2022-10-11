@@ -27,28 +27,32 @@ public class Clothes extends Item {
         return Collections.unmodifiableList(colors);
     }
 
+    public void addColor(Color color, int index) {
+        Color c = colors.get(index);
+        colors.add(color);
+        support.fireIndexedPropertyChange(String.valueOf(colorsID), index, c, color);
+    }
+
+    public void removeColor(Color color, int index) {
+        Color c = colors.get(index);
+        colors.remove(color);
+        support.fireIndexedPropertyChange(String.valueOf(colorsID), index, color, c);
+    }
+
     public List<Sizes> getSizes() {
         return Collections.unmodifiableList(sizes);
     }
 
-    public void addColor(Color color) {
-        colors.add(color);
-        support.firePropertyChange(String.valueOf(colorsID), null, color);
-    }
-
-    public void removeColor(Color color) {
-        colors.remove(color);
-        support.firePropertyChange(String.valueOf(colorsID), color, null);
-    }
-
-    public void addSize(Sizes size) {
+    public void addSize(Sizes size, int index) {
+        Sizes s = sizes.get(index);
         sizes.add(size);
-        support.firePropertyChange(String.valueOf(sizesID), null, size);
+        support.fireIndexedPropertyChange(String.valueOf(sizesID), index, s, size);
     }
 
-    public void removeSize(Sizes size) {
+    public void removeSize(Sizes size, int index) {
+        Sizes s = sizes.get(index);
         sizes.remove(size);
-        support.firePropertyChange(String.valueOf(sizesID), size, null);
+        support.fireIndexedPropertyChange(String.valueOf(sizesID), index, s, size);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {

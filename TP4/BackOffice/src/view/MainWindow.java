@@ -37,8 +37,9 @@ public class MainWindow {
         products.deleteItem(itemsListView.getSelectionModel().getSelectedItem());
     }
 
-    private static VBox perfumeUC;
-    private static VBox clothesUC;
+    private VBox perfumeUC;
+    private VBox clothesUC;
+
     private ProductsVM products;
 
     public void initialize() {

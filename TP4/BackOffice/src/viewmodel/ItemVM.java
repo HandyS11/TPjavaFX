@@ -4,8 +4,12 @@ import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.property.StringProperty;
+import model.Item;
 
-public abstract class ItemVM {
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+
+public abstract class ItemVM implements PropertyChangeListener {
 
     private StringProperty name = new SimpleStringProperty();
         public String getName() { return name.get(); }
@@ -20,5 +24,14 @@ public abstract class ItemVM {
     public ItemVM(String name, int price) {
         setName(name);
         setPrice(price);
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        if (evt.getPropagationId() == Item.nameID) {
+            name.set((String) evt.getNewValue());
+        } else if (evt.getPropagationId() == Item.priceID) {
+            price.set((int) evt.getNewValue());
+        }
     }
 }

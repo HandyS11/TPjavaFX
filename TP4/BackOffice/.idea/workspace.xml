@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ItemUC.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ItemUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/ItemUC.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Clothes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clothes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Perfume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Perfume.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ClothesUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PerfumeUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PerfumeUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2FzwezW7kvtM1VSFuHHYdGU7QFM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="launch.Launcher" />
+      <module name="BackOffice" />
+      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_JFX_18} --add-modules javafx.controls,javafx.fxml" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="" />
+      <created>1665508319336</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665508319336</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

@@ -51,7 +51,6 @@ public class ClothesUC extends VBox {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         clothesUC.getChildren().add(0, itemUC);
     }
 }

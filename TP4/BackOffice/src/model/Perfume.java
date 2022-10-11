@@ -1,9 +1,15 @@
 package model;
 
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeSupport;
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 public class Perfume extends Item {
+
+    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+    public static final UUID flagranceID = UUID.randomUUID();
 
     private List<String> flagrance;
 
@@ -16,7 +22,19 @@ public class Perfume extends Item {
         return Collections.unmodifiableList(flagrance);
     }
 
-    public void addFlagrance(String str) {
+    public void addFlagrance(String str, int index) {
+        String s = flagrance.get(index);
         flagrance.add(str);
+        support.fireIndexedPropertyChange(String.valueOf(flagranceID), index, s, str);
+    }
+
+    public void removeFlagrance(int index) {
+        String s = flagrance.get(index);
+        flagrance.remove(index);
+        support.fireIndexedPropertyChange(String.valueOf(flagranceID), index, s, null);
+    }
+
+    public void addListener(PropertyChangeListener propertyChangeListener) {
+        support.addPropertyChangeListener(propertyChangeListener);
     }
 }

@@ -42,7 +42,6 @@ public class PerfumeUC extends VBox {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         perfumeUC.getChildren().add(0, itemUC);
     }
 }

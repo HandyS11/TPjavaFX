@@ -3,37 +3,57 @@ package viewmodel;
 import javafx.beans.property.*;
 import model.Color;
 
-public class ColorVM {
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
+import java.util.List;
+
+public class ColorVM implements PropertyChangeListener {
 
     private Color model;
 
-    private IntegerProperty rouge = new SimpleIntegerProperty();
-    public int getRouge() {return rouge.get();}
-    public ReadOnlyIntegerProperty rougeProperty() {return rouge;}
-    private void setRouge(int rouge) {this.rouge.set(rouge);}
+    private IntegerProperty red = new SimpleIntegerProperty();
+    public int getRed() {return red.get();}
+    public ReadOnlyIntegerProperty redProperty() {return red;}
+    private void setRed(int red) {this.red.set(red);}
 
-    private IntegerProperty vert = new SimpleIntegerProperty();
-    public int getVert() {return vert.get();}
-    public ReadOnlyIntegerProperty vertProperty() {return vert;}
-    private void setVert(int vert) {this.vert.set(vert);}
+    private IntegerProperty green = new SimpleIntegerProperty();
+    public int getGreen() {return green.get();}
+    public ReadOnlyIntegerProperty greenProperty() {return green;}
+    private void setGreen(int green) {this.green.set(green);}
 
-    private IntegerProperty bleu = new SimpleIntegerProperty();
-    public int getBleu() {return bleu.get();}
-    public ReadOnlyIntegerProperty bleuProperty() {return bleu;}
-    private void setBleu(int bleu) {this.bleu.set(bleu);}
+    private IntegerProperty blue = new SimpleIntegerProperty();
+    public int getBlue() {return blue.get();}
+    public ReadOnlyIntegerProperty blueProperty() {return blue;}
+    private void setBlue(int blue) {this.blue.set(blue);}
 
-    private ObjectProperty<javafx.scene.paint.Color> laCouleur = new SimpleObjectProperty<>();
-    public javafx.scene.paint.Color getLaCouleur() {return laCouleur.get();}
-    public ObjectProperty<javafx.scene.paint.Color> laCouleurProperty() {return laCouleur;}
-    private void setLaCouleur(javafx.scene.paint.Color laCouleur) {this.laCouleur.set(laCouleur);}
+    private ObjectProperty<javafx.scene.paint.Color> color = new SimpleObjectProperty<>();
+        public javafx.scene.paint.Color getColor() {return color.get();}
+        public ObjectProperty<javafx.scene.paint.Color> colorProperty() {return color;}
+        private void setColor(javafx.scene.paint.Color color) {this.color.set(color);}
 
-    ColorVM(int rouge, int vert, int bleu) {
-        laCouleur.addListener((obs,old,newV)->{
-            setRouge((int)(newV.getRed()*255));
-            setVert((int)(newV.getGreen()*255));
-            setBleu((int)(newV.getBlue()*255));
+    ColorVM(int red, int green, int blue) {
+        color.addListener((obs,old,newV)-> {
+            setRed((int)(newV.getRed()*255));
+            setGreen((int)(newV.getGreen()*255));
+            setBlue((int)(newV.getBlue()*255));
         });
+        color.set(new javafx.scene.paint.Color(red/255.,green/255.,blue/255.,1));
+        model = new Color(red, green, blue);
+        model.addListener(this);
+    }
 
-        laCouleur.set(new javafx.scene.paint.Color(rouge/255.,vert/255.,bleu/255.,1));
+    ColorVM(List<Integer> list) {
+        this(list.get(0), list.get(1), list.get(2));
+    }
+
+    @Override
+    public void propertyChange(PropertyChangeEvent evt) {
+        if (evt.getPropagationId() == Color.redID) {
+            red.set((int) evt.getNewValue());
+        } else if (evt.getPropagationId() == Color.greenID) {
+            green.set((int) evt.getNewValue());
+        } else if (evt.getPropagationId() == Color.blueID) {
+            blue.set((int) evt.getNewValue());
+        }
     }
 }

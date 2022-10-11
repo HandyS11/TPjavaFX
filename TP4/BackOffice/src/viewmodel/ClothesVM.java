@@ -7,9 +7,11 @@ import javafx.collections.ObservableList;
 import model.Clothes;
 import utils.Sizes;
 
+import java.beans.IndexedPropertyChangeEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ClothesVM extends ItemVM implements PropertyChangeListener {
 
@@ -31,7 +33,7 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
 
     public ClothesVM(Clothes clothes) {
         super(clothes.getName(), clothes.getPrice());
-        clothes.getColors().forEach((color -> colors.add(new ColorVM(color.getRed(), color.getGreen(), color.getBleu()))));
+        clothes.getColors().forEach((color -> colors.add(new ColorVM(color.getRed(), color.getGreen(), color.getBlue()))));
         clothes.getSizes().forEach((size -> sizes.add(size)));
         model = clothes;
         model.addListener(this);
@@ -39,10 +41,11 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        if (evt.getPropagationId() == Clothes.colorsID) {
-            //
-        } else if (evt.getPropagationId() == Clothes.sizesID) {
-            //
+        IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
+        if (e.getPropagationId() == Clothes.colorsID) {
+            colors.set(e.getIndex() ,new ColorVM((List<Integer>) e.getNewValue()));
+        } else if (e.getPropagationId() == Clothes.sizesID) {
+            sizes.set(e.getIndex(), (Sizes) e.getNewValue());
         }
     }
 }
