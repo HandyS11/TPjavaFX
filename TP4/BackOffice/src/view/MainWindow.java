@@ -25,25 +25,22 @@ public class MainWindow {
     private ListView<ItemVM> itemsListView;
 
     @FXML
-    private void addPerfume() {
-    }
+    private void addPerfume() {}
 
     @FXML
-    private void addClothes() {
-    }
+    private void addClothes() {}
 
     @FXML
     private void deleteSelected() {
-        products.deleteItem(itemsListView.getSelectionModel().getSelectedItem());
+        viewModel.deleteItem(itemsListView.getSelectionModel().getSelectedItem());
     }
 
-    private VBox perfumeUC;
-    private VBox clothesUC;
+    private VBox perfumeUC, clothesUC;
 
-    private ProductsVM products;
+    private ProductsVM viewModel;
 
     public void initialize() {
-        products = new ProductsVM();
+        viewModel = new ProductsVM();
 
         setupChoiceBox();
         instantiateUC();
@@ -52,8 +49,8 @@ public class MainWindow {
 
     private void instantiateUC() {
         try {
-            perfumeUC = new PerfumeUC();
-            clothesUC = new ClothesUC();
+            perfumeUC = new PerfumeUC(new ItemUC());
+            clothesUC = new ClothesUC(new ItemUC());
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -61,13 +58,14 @@ public class MainWindow {
     }
 
     private void bindListViewAndMore() {
-        itemsListView.itemsProperty().bind(products.itemsProperty());
+        itemsListView.itemsProperty().bind(viewModel.itemsProperty());
         itemsListView.setCellFactory(__ -> new ItemCell());
         itemsListView.getSelectionModel().selectedItemProperty().addListener((__, oldV, newV) -> {
             if (newV instanceof ClothesVM) {
                 setDetail(clothesUC);
             } else if (newV instanceof PerfumeVM) {
                 setDetail(perfumeUC);
+                ((PerfumeUC) perfumeUC).setViewModel((PerfumeVM) newV);
             }
         });
     }

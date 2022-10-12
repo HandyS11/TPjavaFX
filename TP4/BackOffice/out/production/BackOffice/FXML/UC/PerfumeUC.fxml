@@ -9,7 +9,7 @@
 
 <fx:root fx:id="perfumeUC" type="javafx.scene.layout.VBox" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
     <children>
-        <ListView fx:id="fragrancesListView" prefWidth="400.0">
+        <ListView fx:id="fragrancesListView">
          <VBox.margin>
             <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
          </VBox.margin></ListView>
@@ -19,15 +19,14 @@
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin></TextField>
-                <Button onAction="#addSmell" text="Add">
+                <Button fx:id="addSmellButton" onAction="#addSmell" text="Add">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin></Button>
-                <Button onAction="#removeSmell" text="Remove">
+                <Button fx:id="removeSmellButton" onAction="#removeSmell" text="Remove Selected">
                <HBox.margin>
                   <Insets right="5.0" />
                </HBox.margin></Button>
-                <Button onAction="#deselectSmell" text="Deselect" />
             </children>
          <VBox.margin>
             <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />

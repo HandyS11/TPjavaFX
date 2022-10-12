@@ -9,7 +9,8 @@ import java.util.UUID;
 public class Products {
 
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
-    public static final UUID itemsID = UUID.randomUUID();
+    public static final UUID PROP_ITEMS_ADD = UUID.randomUUID();
+    public static final UUID PROP_ITEMS_REMOVE = UUID.randomUUID();
 
     private List<Item> items;
 
@@ -24,13 +25,13 @@ public class Products {
     public void addItem(Item item, int index) {
         Item i = items.get(index);
         items.add(index, item);
-        support.fireIndexedPropertyChange(String.valueOf(itemsID), index, i, item);
+        support.fireIndexedPropertyChange(String.valueOf(PROP_ITEMS_ADD), index, i, item);
     }
 
     public void removeItem(int index) {
         Item i = items.get(index);
         items.remove(index);
-        support.fireIndexedPropertyChange(String.valueOf(itemsID), index, i, null);
+        support.fireIndexedPropertyChange(String.valueOf(PROP_ITEMS_REMOVE), index, i, null);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {

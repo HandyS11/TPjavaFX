@@ -9,7 +9,8 @@ import java.util.UUID;
 public class Perfume extends Item {
 
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
-    public static final UUID flagranceID = UUID.randomUUID();
+    public static final UUID PROP_FLAGRANCE_ADD = UUID.randomUUID();
+    public static final UUID PROP_FLAGRANCE_REMOVE = UUID.randomUUID();
 
     private List<String> flagrance;
 
@@ -25,13 +26,13 @@ public class Perfume extends Item {
     public void addFlagrance(String str, int index) {
         String s = flagrance.get(index);
         flagrance.add(str);
-        support.fireIndexedPropertyChange(String.valueOf(flagranceID), index, s, str);
+        support.fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_ADD), index, s, str);
     }
 
     public void removeFlagrance(int index) {
         String s = flagrance.get(index);
         flagrance.remove(index);
-        support.fireIndexedPropertyChange(String.valueOf(flagranceID), index, s, null);
+        support.fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_REMOVE), index, s, null);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {

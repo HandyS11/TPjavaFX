@@ -5,23 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ItemUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ItemUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/ItemUC.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP2/BirdCollector/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/PerfumeUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/PerfumeUC.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Clothes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clothes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Color.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Perfume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Perfume.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ClothesUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ItemUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ItemUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/PerfumeUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PerfumeUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" afterDir="false" />
@@ -30,6 +30,13 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
@@ -42,13 +49,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="launch.Launcher" />
@@ -80,5 +89,12 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="view.PerfumeUC" memberName="startIdx" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

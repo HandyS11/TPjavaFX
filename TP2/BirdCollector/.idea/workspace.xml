@@ -2,20 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7d5e7892-8001-4c97-98bc-134230ea963e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/out/production/BackOffice/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/out/production/BackOffice/FXML/MainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/out/production/BackOffice/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/out/production/BackOffice/FXML/UC/ClothesUC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/out/production/BackOffice/FXML/UC/ItemUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/out/production/BackOffice/FXML/UC/ItemUC.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/MainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/UC/ClothesUC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/UC/ItemUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/UC/ItemUC.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/UC/PerfumeUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/rsrc/FXML/UC/PerfumeUC.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Clothes.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Clothes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Perfume.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Perfume.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/model/Products.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/ClothesUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/ItemUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/ItemUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/part/ItemCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/part/ItemCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/PerfumeUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/view/PerfumeUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/viewmodel/ClothesVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/viewmodel/ItemVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/viewmodel/ItemVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../TP4/BackOffice/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../TP4/BackOffice/src/viewmodel/PerfumeVM.java" afterDir="false" />

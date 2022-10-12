@@ -29,11 +29,22 @@ public class PerfumeVM extends ItemVM implements PropertyChangeListener {
         model.addListener(this);
     }
 
+    public void addFragrance(String str) {
+        model.addFlagrance(str, 0);
+    }
+
+    public void removeFragrance(int index) {
+        model.removeFlagrance(index);
+    }
+
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
+        super.propertyChange(evt);
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        if (e.getPropagationId() == Perfume.flagranceID) {
-            fragrances.set(e.getIndex(), ((String) e.getNewValue()));
+        if (e.getPropagationId() == Perfume.PROP_FLAGRANCE_ADD) {
+            fragrances.add(e.getIndex(), ((String) e.getNewValue()));
+        } else if (e.getPropagationId() == Perfume.PROP_FLAGRANCE_REMOVE) {
+            fragrances.remove(e.getIndex());
         }
     }
 }

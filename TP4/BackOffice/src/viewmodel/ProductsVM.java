@@ -15,8 +15,6 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 
-import static model.Products.itemsID;
-
 public class ProductsVM implements PropertyChangeListener {
 
     private Products model;
@@ -41,22 +39,28 @@ public class ProductsVM implements PropertyChangeListener {
         model.addListener(this);
     }
 
-    public void deleteItem(ItemVM item) {
-        items.remove(item);
-    }
-
     public void addItem(ItemVM item) {
         items.add(item);
+    }
+
+    public void deleteItem(ItemVM item) {
+        items.remove(item);
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        if (e.getPropagationId() == itemsID) {
-            if (e.getNewValue() instanceof Clothes) {
-                items.set(e.getIndex(), new ClothesVM((Clothes) e.getNewValue()));
-            } else if (evt.getNewValue() instanceof Perfume) {
-                items.set(e.getIndex() ,new PerfumeVM((Perfume) e.getNewValue()));
+        if (e.getNewValue() instanceof Clothes) {
+            if (e.getPropagationId() == Products.PROP_ITEMS_ADD) {
+                items.add(e.getIndex(), new ClothesVM((Clothes) e.getNewValue()));
+            } else {
+                items.remove(e.getIndex());
+            }
+        } else if (evt.getNewValue() instanceof Perfume) {
+            if (e.getPropagationId() == Products.PROP_ITEMS_REMOVE) {
+                items.add(e.getIndex(), new PerfumeVM((Perfume) e.getNewValue()));
+            } else {
+                items.remove(e.getIndex());
             }
         }
     }

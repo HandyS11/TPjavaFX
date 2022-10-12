@@ -2,9 +2,11 @@ package view;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
 import javafx.scene.layout.VBox;
 import utils.Sizes;
+import viewmodel.ClothesVM;
 import viewmodel.ColorVM;
 
 import java.io.IOException;
@@ -16,6 +18,16 @@ public class ClothesUC extends VBox {
 
     @FXML
     private ListView<Sizes> sizesListView;
+
+    private ClothesVM viewModel;
+
+    @FXML
+    private VBox clothesUC;
+
+    private VBox itemUC;
+
+    @FXML
+    private Button addSizeButton;
 
     @FXML
     private void addColor() {
@@ -33,12 +45,8 @@ public class ClothesUC extends VBox {
     private void removeSize() {
     }
 
-    @FXML
-    private VBox clothesUC;
-
-    private VBox itemUC;
-
-    public ClothesUC() throws IOException {
+    public ClothesUC(VBox itemUC) throws IOException {
+        this.itemUC = itemUC;
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/UC/ClothesUC.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -46,11 +54,18 @@ public class ClothesUC extends VBox {
     }
 
     public void initialize() {
-        try {
-            itemUC = new ItemUC();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         clothesUC.getChildren().add(0, itemUC);
+        //addSizeButton.disableProperty().bindBidirectional();
+    }
+
+    public void setViewModel(ClothesVM clothesVM) {
+        viewModel = clothesVM;
+        ((ItemUC) itemUC).setViewModel(viewModel);
+
+        colorsListView.itemsProperty().bind(viewModel.colorsProperty());
+        //colorsListView.setCellFactory(__ -> new ColorCell());
+
+        sizesListView.itemsProperty().bind(viewModel.sizesProperty());
+        //sizesListView.setCellFactory(__ -> new SizesCell());
     }
 }
