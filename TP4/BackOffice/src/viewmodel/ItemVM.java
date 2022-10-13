@@ -28,9 +28,9 @@ public abstract class ItemVM implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        if (evt.getPropagationId() == Item.PROP_NAME) {
+        if (evt.getPropertyName().equals(String.valueOf(Item.PROP_NAME))) {
             name.set((String) evt.getNewValue());
-        } else if (evt.getPropagationId() == Item.PROP_PRICE) {
+        } else if (evt.getPropertyName().equals(String.valueOf(Item.PROP_PRICE))) {
             price.set((int) evt.getNewValue());
         }
     }

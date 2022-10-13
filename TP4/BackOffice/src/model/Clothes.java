@@ -33,13 +33,13 @@ public class Clothes extends Item {
         Color c = colors.get(index);
         colors.add(color);
         support.fireIndexedPropertyChange(String.valueOf(PROP_COLORS_ADD), index, c, color);
-    }
+    }   // prendre en compte le cas index = 0
 
     public void removeColor(Color color, int index) {
         Color c = colors.get(index);
         colors.remove(color);
         support.fireIndexedPropertyChange(String.valueOf(PROP_COLORS_REMOVE), index, color, c);
-    }
+    }   // same
 
     public List<Sizes> getSizes() {
         return Collections.unmodifiableList(sizes);

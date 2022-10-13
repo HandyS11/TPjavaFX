@@ -24,8 +24,13 @@ public class Perfume extends Item {
     }
 
     public void addFlagrance(String str, int index) {
-        String s = flagrance.get(index);
-        flagrance.add(str);
+        String s = null;
+        if (flagrance.size() > 0) {
+            s = flagrance.get(index);
+            flagrance.add(index, str);
+        } else {
+            flagrance.add(str);
+        }
         support.fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_ADD), index, s, str);
     }
 

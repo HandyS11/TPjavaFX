@@ -27,18 +27,16 @@
             <items>
                <ChoiceBox/>
                <VBox alignment="TOP_CENTER">
-                  <children>
-                     <Button fx:id="addSizeButton" onAction="#addSize" text="Add">
-                        <VBox.margin>
-                           <Insets top="10.0"/>
-                        </VBox.margin>
-                     </Button>
-                     <Button onAction="#removeSize" text="Remove Selected">
-                        <VBox.margin>
-                           <Insets bottom="10.0" top="10.0"/>
-                        </VBox.margin>
-                     </Button>
-                  </children>
+                  <Button fx:id="addSizeButton" onAction="#addSize" text="Add">
+                     <VBox.margin>
+                        <Insets top="10.0"/>
+                     </VBox.margin>
+                  </Button>
+                  <Button onAction="#removeSize" text="Remove Selected">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="10.0"/>
+                     </VBox.margin>
+                  </Button>
                </VBox>
             </items>
             <VBox.margin>

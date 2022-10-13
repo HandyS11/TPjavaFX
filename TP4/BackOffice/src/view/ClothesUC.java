@@ -45,8 +45,7 @@ public class ClothesUC extends VBox {
     private void removeSize() {
     }
 
-    public ClothesUC(VBox itemUC) throws IOException {
-        this.itemUC = itemUC;
+    public ClothesUC() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/UC/ClothesUC.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -54,13 +53,11 @@ public class ClothesUC extends VBox {
     }
 
     public void initialize() {
-        clothesUC.getChildren().add(0, itemUC);
         //addSizeButton.disableProperty().bindBidirectional();
     }
 
     public void setViewModel(ClothesVM clothesVM) {
         viewModel = clothesVM;
-        ((ItemUC) itemUC).setViewModel(viewModel);
 
         colorsListView.itemsProperty().bind(viewModel.colorsProperty());
         //colorsListView.setCellFactory(__ -> new ColorCell());

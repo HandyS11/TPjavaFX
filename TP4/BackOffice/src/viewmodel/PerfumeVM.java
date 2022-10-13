@@ -15,7 +15,7 @@ public class PerfumeVM extends ItemVM implements PropertyChangeListener {
 
     private Perfume model;
 
-    ObservableList<String> fragrancesObs = FXCollections.observableList(new ArrayList<String>());
+    ObservableList<String> fragrancesObs = FXCollections.observableList(new ArrayList<>());
     private ListProperty<String> fragrances = new SimpleListProperty<>(fragrancesObs);
         public ObservableList<String> getFragrances() { return fragrances.get(); }
         public ListProperty<String> fragrancesProperty() { return fragrances; }
@@ -41,9 +41,9 @@ public class PerfumeVM extends ItemVM implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         super.propertyChange(evt);
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        if (e.getPropagationId() == Perfume.PROP_FLAGRANCE_ADD) {
+        if (e.getPropertyName().equals(String.valueOf(Perfume.PROP_FLAGRANCE_ADD))) {
             fragrances.add(e.getIndex(), ((String) e.getNewValue()));
-        } else if (e.getPropagationId() == Perfume.PROP_FLAGRANCE_REMOVE) {
+        } else if (e.getPropertyName().equals(String.valueOf(Perfume.PROP_FLAGRANCE_REMOVE))) {
             fragrances.remove(e.getIndex());
         }
     }

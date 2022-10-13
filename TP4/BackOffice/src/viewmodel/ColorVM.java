@@ -48,11 +48,11 @@ public class ColorVM implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        if (evt.getPropagationId() == Color.redID) {
+        if (evt.getPropertyName().equals(String.valueOf(Color.PROP_RED))) {
             red.set((int) evt.getNewValue());
-        } else if (evt.getPropagationId() == Color.greenID) {
+        } else if (evt.getPropertyName().equals(String.valueOf(Color.PROP_GREEN))) {
             green.set((int) evt.getNewValue());
-        } else if (evt.getPropagationId() == Color.blueID) {
+        } else if (evt.getPropertyName().equals(String.valueOf(Color.PROP_BLUE))) {
             blue.set((int) evt.getNewValue());
         }
     }

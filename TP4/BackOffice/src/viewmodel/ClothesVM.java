@@ -17,14 +17,14 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
 
     private Clothes model;
 
-    ObservableList<ColorVM> colorsObs = FXCollections.observableList(new ArrayList<ColorVM>());
+    ObservableList<ColorVM> colorsObs = FXCollections.observableList(new ArrayList<>());
     private ListProperty<ColorVM> colors = new SimpleListProperty<>(colorsObs);
 
     public ObservableList<ColorVM> getColors() { return colors.get(); }
         public ListProperty<ColorVM> colorsProperty() { return colors; }
         public void setColors(ObservableList<ColorVM> colors) { this.colors.set(colors); }
 
-    ObservableList<Sizes> sizesObs = FXCollections.observableList(new ArrayList<Sizes>());
+    ObservableList<Sizes> sizesObs = FXCollections.observableList(new ArrayList<>());
     private ListProperty<Sizes> sizes = new SimpleListProperty<>(sizesObs);
         public ObservableList<Sizes> getSizes() { return sizes.get(); }
         public ListProperty<Sizes> sizesProperty() { return sizes; }
@@ -43,13 +43,13 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         super.propertyChange(evt);
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        if (e.getPropagationId() == Clothes.PROP_COLORS_ADD) {
+        if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_COLORS_ADD))) {
             colors.add(e.getIndex() ,new ColorVM((List<Integer>) e.getNewValue()));
-        } else if (e.getPropagationId() == Clothes.PROP_COLORS_REMOVE) {
+        } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_COLORS_REMOVE))) {
             colors.remove(e.getIndex());
-        } else if (e.getPropagationId() == Clothes.PROP_SIZES_ADD) {
+        } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_SIZES_ADD))) {
             sizes.add(e.getIndex(), (Sizes) e.getNewValue());
-        } else if (e.getPropagationId() == Clothes.PROP_SIZES_REMOVE) {
+        } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_SIZES_REMOVE))) {
             sizes.remove(e.getIndex());
         }
     }

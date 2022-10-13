@@ -9,9 +9,9 @@ import java.util.UUID;
 public class Color {
 
     private final PropertyChangeSupport support = new PropertyChangeSupport(this);
-    public static final UUID redID = UUID.randomUUID();
-    public static final UUID greenID = UUID.randomUUID();
-    public static final UUID blueID = UUID.randomUUID();
+    public static final UUID PROP_RED = UUID.randomUUID();
+    public static final UUID PROP_GREEN = UUID.randomUUID();
+    public static final UUID PROP_BLUE = UUID.randomUUID();
 
     private int red;
     private int green;
@@ -47,12 +47,12 @@ public class Color {
         int r = getRed();
         int g = getGreen();
         int b = getBlue();
-        this.red = (int) red*255;
-        this.green = (int) green*255;
-        this.blue = (int) blue*255;
-        support.firePropertyChange(String.valueOf(redID), r, red);
-        support.firePropertyChange(String.valueOf(greenID), g, green);
-        support.firePropertyChange(String.valueOf(blueID), b, blue);
+        this.red = red*255;
+        this.green = green*255;
+        this.blue = blue*255;
+        support.firePropertyChange(String.valueOf(PROP_RED), r, red);
+        support.firePropertyChange(String.valueOf(PROP_GREEN), g, green);
+        support.firePropertyChange(String.valueOf(PROP_BLUE), b, blue);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {

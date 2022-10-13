@@ -24,13 +24,11 @@ public class PerfumeUC extends VBox {
     @FXML
     private VBox perfumeUC;
 
-    private VBox itemUC;
-
     private PerfumeVM viewModel;
 
     @FXML
     private void addSmell() {
-        viewModel.addFragrance(fragrancesListView.getSelectionModel().getSelectedItem());
+        viewModel.addFragrance(smellTextField.getText());
     }
 
     @FXML
@@ -39,8 +37,7 @@ public class PerfumeUC extends VBox {
     }
 
 
-    public PerfumeUC(VBox itemUC) throws IOException {
-        this.itemUC = itemUC;
+    public PerfumeUC() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/FXML/UC/PerfumeUC.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -48,15 +45,12 @@ public class PerfumeUC extends VBox {
     }
 
     public void initialize() {
-        perfumeUC.getChildren().add(0, itemUC);
-
         addSmellButton.disableProperty().bind(smellTextField.textProperty().isEmpty());
         removeSmellButton.disableProperty().bind(fragrancesListView.getSelectionModel().selectedIndexProperty().isEqualTo(-1));
     }
 
     public void setViewModel(PerfumeVM perfumeVM) {
         viewModel = perfumeVM;
-        ((ItemUC) itemUC).setViewModel(viewModel);
         fragrancesListView.itemsProperty().bind(viewModel.fragrancesProperty());
     }
 }

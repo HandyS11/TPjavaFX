@@ -14,6 +14,7 @@ import java.beans.IndexedPropertyChangeEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ProductsVM implements PropertyChangeListener {
 
@@ -39,6 +40,14 @@ public class ProductsVM implements PropertyChangeListener {
         model.addListener(this);
     }
 
+    public void addPerfume() {
+        items.add(new PerfumeVM(new Perfume("Name", 0, new ArrayList<>())));
+    }
+
+    public void addClothes() {
+        items.add(new ClothesVM(new Clothes("Name", 0, new ArrayList<>(), new ArrayList<>())));
+    }
+
     public void addItem(ItemVM item) {
         items.add(item);
     }
@@ -51,15 +60,15 @@ public class ProductsVM implements PropertyChangeListener {
     public void propertyChange(PropertyChangeEvent evt) {
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
         if (e.getNewValue() instanceof Clothes) {
-            if (e.getPropagationId() == Products.PROP_ITEMS_ADD) {
+            if (e.getPropertyName().equals(String.valueOf(Products.PROP_ITEMS_ADD))) {
                 items.add(e.getIndex(), new ClothesVM((Clothes) e.getNewValue()));
-            } else {
+            } else if (e.getPropertyName().equals(String.valueOf(Products.PROP_ITEMS_REMOVE))) {
                 items.remove(e.getIndex());
             }
         } else if (evt.getNewValue() instanceof Perfume) {
-            if (e.getPropagationId() == Products.PROP_ITEMS_REMOVE) {
+            if (e.getPropertyName().equals(String.valueOf(Products.PROP_ITEMS_ADD))) {
                 items.add(e.getIndex(), new PerfumeVM((Perfume) e.getNewValue()));
-            } else {
+            } else if (e.getPropertyName().equals(String.valueOf(Products.PROP_ITEMS_REMOVE))) {
                 items.remove(e.getIndex());
             }
         }
