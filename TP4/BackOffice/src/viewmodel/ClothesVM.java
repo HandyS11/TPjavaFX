@@ -12,49 +12,48 @@ import java.beans.IndexedPropertyChangeEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
-import java.util.List;
 
 public class ClothesVM extends ItemVM implements PropertyChangeListener {
 
-    private Clothes model;
+    private final Clothes model;
 
     ObservableList<ColorVM> colorsObs = FXCollections.observableList(new ArrayList<>());
-    private ListProperty<ColorVM> colors = new SimpleListProperty<>(colorsObs);
+    private final ListProperty<ColorVM> colors = new SimpleListProperty<>(colorsObs);
 
     public ObservableList<ColorVM> getColors() { return colors.get(); }
         public ListProperty<ColorVM> colorsProperty() { return colors; }
         public void setColors(ObservableList<ColorVM> colors) { this.colors.set(colors); }
 
     ObservableList<Sizes> sizesObs = FXCollections.observableList(new ArrayList<>());
-    private ListProperty<Sizes> sizes = new SimpleListProperty<>(sizesObs);
+    private final ListProperty<Sizes> sizes = new SimpleListProperty<>(sizesObs);
         public ObservableList<Sizes> getSizes() { return sizes.get(); }
         public ListProperty<Sizes> sizesProperty() { return sizes; }
         public void setSizes(ObservableList<Sizes> sizes) { this.sizes.set(sizes); }
 
 
     public ClothesVM(Clothes clothes) {
-        super(clothes.getName(), clothes.getPrice());
-        clothes.getColors().forEach((color -> colors.add(new ColorVM(color.getRed(), color.getGreen(), color.getBlue()))));
-        clothes.getSizes().forEach((size -> sizes.add(size)));
+        super(clothes);
+        clothes.getColors().forEach((color -> colors.add(new ColorVM(new Color(color.getRed(), color.getGreen(), color.getBlue())))));
+        sizes.addAll(clothes.getSizes());
         model = clothes;
         model.addListener(this);
     }
 
-    public void addColor() {    // To fix
-        Color color = new Color(0, 0, 0);
-        model.addColor(color, 0);
+    public void addColor(javafx.scene.paint.Color color) {    // To fix
+        Color c = new Color(color.getRed(), color.getGreen(), color.getBlue());
+        model.addColor(c, colors.size());
     }
 
-    public void removeColor(int index) {
-        model.removeColor(index);
+    public void removeColor(ColorVM colorVM) {
+        model.removeColor(colorVM.getModel());
     }
 
-    public void addSize(Object size) {      // To fix
-        model.addSize((Sizes) size, 0);
+    public void addSize(Object size) {
+        model.addSize((Sizes) size, sizes.size());
     }
 
-    public void removeSize(int index) {
-        model.removeSize(index);
+    public void removeSize(Sizes size) {
+        model.removeSize(size);
     }
 
     @Override
@@ -62,13 +61,13 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
         super.propertyChange(evt);
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
         if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_COLORS_ADD))) {
-            colors.add(e.getIndex() ,new ColorVM((List<Integer>) e.getNewValue()));
+            colorsObs.add(e.getIndex(), (ColorVM) e.getNewValue());
         } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_COLORS_REMOVE))) {
-            colors.remove(e.getIndex());
+            colorsObs.remove(e.getIndex());
         } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_SIZES_ADD))) {
-            sizes.add(e.getIndex(), (Sizes) e.getNewValue());
+            sizesObs.add(e.getIndex(), (Sizes) e.getNewValue());
         } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_SIZES_REMOVE))) {
-            sizes.remove(e.getIndex());
+            sizesObs.remove(e.getIndex());
         }
     }
 }

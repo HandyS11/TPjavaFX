@@ -4,16 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="">
+    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="Add some binds">
+      <change afterPath="$PROJECT_DIR$/save.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/FileLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/FileSaver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/data/IDataSaver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/IDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/IDataLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/data/Stub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Stub.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/launch/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/launch/Launcher.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Clothes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clothes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Color.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Perfume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Perfume.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/model/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Products.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ClothesUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PerfumeUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PerfumeUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,6 +37,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -35,6 +49,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2FzwezW7kvtM1VSFuHHYdGU7QFM" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -58,6 +75,14 @@
       <option name="presentableId" value="Default" />
       <updated>1665508319336</updated>
     </task>
+    <task id="LOCAL-00001" summary="Add some binds">
+      <created>1665838144893</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1665838144893</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -70,6 +95,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add some binds" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add some binds" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -1,75 +1,96 @@
 package viewmodel;
 
-import data.IDataLoader;
-import data.Stub;
+import data.*;
 import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
 import model.Clothes;
+import model.Item;
 import model.Perfume;
 import model.Products;
 
 import java.beans.IndexedPropertyChangeEvent;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
+import java.io.IOException;
 import java.util.ArrayList;
 
 public class ProductsVM implements PropertyChangeListener {
 
+
     private Products model;
 
-    private IDataLoader dataLoader = new Stub();
-
-    ObservableList<ItemVM> itemsObs = FXCollections.observableList(new ArrayList<>());
-    private ListProperty<ItemVM> items = new SimpleListProperty<>(itemsObs);
+    private final ObservableList<ItemVM> itemsObs = FXCollections.observableList(new ArrayList<>());
+    private final FilteredList<ItemVM> filteredList = new FilteredList<>(itemsObs);
+    private final ListProperty<ItemVM> items = new SimpleListProperty<>(filteredList);
         public ObservableList<ItemVM> getItems() { return items.get(); }
         public ListProperty<ItemVM> itemsProperty() { return items; }
         public void setItems(ObservableList<ItemVM> items) { this.items.set(items); }
 
     public ProductsVM() {
-        model = new Products(dataLoader.load());
-        model.getItems().forEach((item -> {
-            if (item instanceof Clothes) {
-                addItem(new ClothesVM((Clothes) item));
-            } else if (item instanceof Perfume) {
-                addItem(new PerfumeVM((Perfume) item));
-            }
-        }));
-        model.addListener(this);
+        try {
+            model = new FileLoader().load();
+        } catch (Exception e) {
+            model = new Stub().load();
+        } finally {
+            model.getItems().forEach(item -> {
+                if (item instanceof Clothes) {
+                    itemsObs.add(new ClothesVM((Clothes) item));
+                } else if (item instanceof Perfume) {
+                    itemsObs.add(new PerfumeVM((Perfume) item));
+                }
+            });
+            model.addListener(this);
+        }
     }
 
     public void addPerfume() {
-        items.add(new PerfumeVM(new Perfume("Name", 0, new ArrayList<>())));
+        Item item = (new Perfume("Name", 0, new ArrayList<>()));
+        addItem(item);
     }
 
     public void addClothes() {
-        items.add(new ClothesVM(new Clothes("Name", 0, new ArrayList<>(), new ArrayList<>())));
+        Item item = new Clothes("Name", 0, new ArrayList<>(), new ArrayList<>());
+        addItem(item);
     }
 
-    public void addItem(ItemVM item) {
-        items.add(item);
+    public void addItem(Item item) {
+        model.addItem(item, 0);
     }
 
     public void deleteItem(ItemVM item) {
-        items.remove(item);
+        model.removeItem(item.getModel());
     }
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        if (e.getNewValue() instanceof Clothes) {
-            if (e.getPropertyName().equals(String.valueOf(Products.PROP_ITEMS_ADD))) {
-                items.add(e.getIndex(), new ClothesVM((Clothes) e.getNewValue()));
-            } else if (e.getPropertyName().equals(String.valueOf(Products.PROP_ITEMS_REMOVE))) {
-                items.remove(e.getIndex());
-            }
-        } else if (evt.getNewValue() instanceof Perfume) {
-            if (e.getPropertyName().equals(String.valueOf(Products.PROP_ITEMS_ADD))) {
-                items.add(e.getIndex(), new PerfumeVM((Perfume) e.getNewValue()));
-            } else if (e.getPropertyName().equals(String.valueOf(Products.PROP_ITEMS_REMOVE))) {
-                items.remove(e.getIndex());
+        var newV = e.getNewValue();
+        var oldV = e.getOldValue();
+        var prop = e.getPropertyName();
+
+        if (newV != null) {
+            if (newV instanceof Clothes) {
+                if (prop.equals(String.valueOf(Products.PROP_ITEMS_ADD))) {
+                    itemsObs.add(e.getIndex(), new ClothesVM((Clothes) newV));
+                }
+            } else if (newV instanceof Perfume) {
+                if (prop.equals(String.valueOf(Products.PROP_ITEMS_ADD))) {
+                    itemsObs.add(e.getIndex() , new PerfumeVM((Perfume) newV));
+                }
             }
         }
+        if (oldV != null) {
+            if (prop.equals(String.valueOf(Products.PROP_ITEMS_REMOVE))) {
+                itemsObs.remove(e.getIndex());
+            }
+        }
+    }
+
+    public void save() throws IOException {
+        IDataSaver saver = new FileSaver();
+        saver.save(model);
     }
 }

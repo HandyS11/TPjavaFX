@@ -1,7 +1,7 @@
 package view;
 
 import javafx.fxml.FXML;
-import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -17,16 +17,20 @@ import java.io.IOException;
 public class MainWindow {
 
     @FXML
-    private ChoiceBox choiceBox;
+    private ComboBox itemFilter;
 
     @FXML
     private VBox details;
+
+    private VBox perfumeUC, clothesUC;
 
     @FXML
     private TextField itemName, itemPrice;
 
     @FXML
     private ListView<ItemVM> itemsListView;
+
+    ProductsVM viewModel;
 
     @FXML
     private void addPerfume() {
@@ -44,16 +48,15 @@ public class MainWindow {
         itemsListView.getSelectionModel().select(0);
     }
 
-    private VBox perfumeUC, clothesUC;
-
-    private ProductsVM viewModel;
+    public MainWindow(ProductsVM productsVM) {
+        viewModel = productsVM;
+    }
 
     public void initialize() {
-        viewModel = new ProductsVM();
-
         setupChoiceBox();
         instantiateUC();
         bindListViewAndMore();
+        //choiceBox.
     }
 
     private void instantiateUC() {
@@ -90,8 +93,8 @@ public class MainWindow {
     }
 
     private void setupChoiceBox() {
-        choiceBox.getItems().addAll("ALL", "Perfume", "Clothes");
-        choiceBox.getSelectionModel().select(0);
+        itemFilter.getItems().addAll("ALL", "Perfume", "Clothes");
+        itemFilter.getSelectionModel().select(0);
     }
 
     private void setDetail(VBox child) {

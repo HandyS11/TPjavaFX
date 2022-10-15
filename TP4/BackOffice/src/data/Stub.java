@@ -9,7 +9,7 @@ import java.util.List;
 public class Stub implements IDataLoader {
 
     @Override
-    public List<Item> load() {
+    public Products load() {
         List<Item> items = new ArrayList<>();
 
         List<String> smelt = new ArrayList<>();
@@ -71,6 +71,8 @@ public class Stub implements IDataLoader {
         items.add(new Perfume("The Rose", 124, fragrances3));
         items.add(new Clothes("Jacket", 48, colors3, sizes3));
 
-        return items;
+        Products products = new Products(items);
+
+        return products;
     }
 }

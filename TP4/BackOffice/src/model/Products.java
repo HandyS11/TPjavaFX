@@ -2,13 +2,14 @@ package model;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-public class Products {
+public class Products implements Serializable {
 
-    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+    private transient PropertyChangeSupport support = null;
     public static final UUID PROP_ITEMS_ADD = UUID.randomUUID();
     public static final UUID PROP_ITEMS_REMOVE = UUID.randomUUID();
 
@@ -23,18 +24,24 @@ public class Products {
     }
 
     public void addItem(Item item, int index) {
-        Item i = items.get(index);
         items.add(index, item);
-        support.fireIndexedPropertyChange(String.valueOf(PROP_ITEMS_ADD), index, i, item);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_ITEMS_ADD), index, null, item);
     }
 
-    public void removeItem(int index) {
-        Item i = items.get(index);
-        items.remove(index);
-        support.fireIndexedPropertyChange(String.valueOf(PROP_ITEMS_REMOVE), index, i, null);
+    public void removeItem(Item item) {
+        int index = items.indexOf(item);
+        items.remove(item);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_ITEMS_REMOVE), index, item, null);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {
-        support.addPropertyChangeListener(propertyChangeListener);
+        getSupport().addPropertyChangeListener(propertyChangeListener);
+    }
+
+    private PropertyChangeSupport getSupport() {
+        if (support == null) {
+            support = new PropertyChangeSupport(this);
+        }
+        return support;
     }
 }

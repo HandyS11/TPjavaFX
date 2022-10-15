@@ -1,11 +1,11 @@
 package view;
 
+import javafx.css.Size;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.ListView;
+import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import utils.Sizes;
 import viewmodel.ClothesVM;
 import viewmodel.ColorVM;
@@ -21,7 +21,10 @@ public class ClothesUC extends VBox {
     private ListView<Sizes> sizesListView;
 
     @FXML
-    private ChoiceBox sizeSelector;
+    private ComboBox sizeSelector;
+
+    @FXML
+    private ColorPicker colorPicker;
 
     private ClothesVM viewModel;
 
@@ -33,12 +36,13 @@ public class ClothesUC extends VBox {
 
     @FXML
     private void addColor() {
-        viewModel.addColor();
+        Color c = colorPicker.getValue();
+        viewModel.addColor(c);
     }
 
     @FXML
     private void removeColor() {
-        viewModel.removeColor(colorsListView.getSelectionModel().getSelectedIndex());
+        viewModel.removeColor(colorsListView.getSelectionModel().getSelectedItem());
     }
 
     @FXML
@@ -48,7 +52,7 @@ public class ClothesUC extends VBox {
 
     @FXML
     private void removeSize() {
-        viewModel.removeSize(sizesListView.getSelectionModel().getSelectedIndex());
+        viewModel.removeSize(sizesListView.getSelectionModel().getSelectedItem());
     }
 
     public ClothesUC() throws IOException {
@@ -59,7 +63,7 @@ public class ClothesUC extends VBox {
     }
 
     public void initialize() {
-        setupChoiceBox();
+        setupSizeSelector();
 
         addSizeButton.disableProperty().bind(sizeSelector.getSelectionModel().selectedItemProperty().isEqualTo(-1));
 
@@ -76,8 +80,8 @@ public class ClothesUC extends VBox {
         sizesListView.itemsProperty().bind(viewModel.sizesProperty());
     }
 
-    private void setupChoiceBox() {     // Add Sizes Enum
-        sizeSelector.getItems().addAll();
+    private void setupSizeSelector() {
+        sizeSelector.getItems().addAll(Sizes.values());
         sizeSelector.getSelectionModel().select(0);
     }
 }

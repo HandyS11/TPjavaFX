@@ -2,11 +2,12 @@ package model;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.Serializable;
 import java.util.UUID;
 
-public abstract class Item {
+public abstract class Item implements Serializable {
 
-    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+    private transient PropertyChangeSupport support = null;
     public static final UUID PROP_NAME = UUID.randomUUID();
     public static final UUID PROP_PRICE = UUID.randomUUID();
 
@@ -26,7 +27,7 @@ public abstract class Item {
     public void setName(String name) {
         String n = this.name;
         this.name = name;
-        support.firePropertyChange(String.valueOf(PROP_NAME), n, name);
+        getSupport().firePropertyChange(String.valueOf(PROP_NAME), n, name);
     }
 
     public int getPrice() {
@@ -36,10 +37,17 @@ public abstract class Item {
     public void setPrice(int price) {
         int p = this.price;
         this.price = price;
-        support.firePropertyChange(String.valueOf(PROP_PRICE), p, price);
+        getSupport().firePropertyChange(String.valueOf(PROP_PRICE), p, price);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {
-        support.addPropertyChangeListener(propertyChangeListener);
+        getSupport().addPropertyChangeListener(propertyChangeListener);
+    }
+
+    private PropertyChangeSupport getSupport() {
+        if (support == null) {
+            support = new PropertyChangeSupport(this);
+        }
+        return support;
     }
 }

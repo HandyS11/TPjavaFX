@@ -33,7 +33,7 @@ public class PerfumeUC extends VBox {
 
     @FXML
     private void removeSmell() {
-        viewModel.removeFragrance(fragrancesListView.getSelectionModel().getSelectedIndex());
+        viewModel.removeFragrance(fragrancesListView.getSelectionModel().getSelectedItem());
     }
 
 

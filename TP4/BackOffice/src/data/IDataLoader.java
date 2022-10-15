@@ -1,10 +1,10 @@
 package data;
 
-import model.Item;
+import model.Products;
 
-import java.util.List;
+import java.io.IOException;
 
 public interface IDataLoader {
 
-    List<Item> load();
+    Products load() throws IOException, ClassNotFoundException;
 }

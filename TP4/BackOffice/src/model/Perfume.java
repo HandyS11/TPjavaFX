@@ -2,17 +2,18 @@ package model;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-public class Perfume extends Item {
+public class Perfume extends Item implements Serializable {
 
-    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+    private transient PropertyChangeSupport support = null;
     public static final UUID PROP_FLAGRANCE_ADD = UUID.randomUUID();
     public static final UUID PROP_FLAGRANCE_REMOVE = UUID.randomUUID();
 
-    private List<String> flagrance;
+    private final List<String> flagrance;
 
     public Perfume(String name, int price, List<String> flagrance) {
         super(name, price);
@@ -31,16 +32,23 @@ public class Perfume extends Item {
         } else {
             flagrance.add(str);
         }
-        support.fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_ADD), index, s, str);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_ADD), index, s, str);
     }
 
-    public void removeFlagrance(int index) {
-        String s = flagrance.get(index);
-        flagrance.remove(index);
-        support.fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_REMOVE), index, s, null);
+    public void removeFlagrance(String str) {
+        int index = flagrance.indexOf(str);
+        flagrance.remove(str);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_REMOVE), index, str, null);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {
-        support.addPropertyChangeListener(propertyChangeListener);
+        getSupport().addPropertyChangeListener(propertyChangeListener);
+    }
+
+    private PropertyChangeSupport getSupport() {
+        if (support == null) {
+            support = new PropertyChangeSupport(this);
+        }
+        return support;
     }
 }

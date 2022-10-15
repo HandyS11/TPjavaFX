@@ -4,13 +4,14 @@ import utils.Sizes;
 
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
+import java.io.Serializable;
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 
-public class Clothes extends Item {
+public class Clothes extends Item implements Serializable {
 
-    private final PropertyChangeSupport support = new PropertyChangeSupport(this);
+    private transient PropertyChangeSupport support = null;
     public static final UUID PROP_COLORS_ADD = UUID.randomUUID();
     public static final UUID PROP_COLORS_REMOVE = UUID.randomUUID();
     public static final UUID PROP_SIZES_ADD = UUID.randomUUID();
@@ -30,20 +31,18 @@ public class Clothes extends Item {
     }
 
     public void addColor(Color color, int index) {
-        Color c = null;
         if (colors.size() > 0 ) {
-            c = colors.get(index);
             colors.add(index, color);
         } else {
             colors.add(color);
         }
-        support.fireIndexedPropertyChange(String.valueOf(PROP_COLORS_ADD), index, c, color);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_COLORS_ADD), index, null, color);
     }
 
-    public void removeColor(int index) {
-        Color c = colors.get(index);
-        colors.remove(index);
-        support.fireIndexedPropertyChange(String.valueOf(PROP_COLORS_REMOVE), index, c, null);
+    public void removeColor(Color color) {
+        int index = colors.indexOf(color);
+        colors.remove(color);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_COLORS_REMOVE), index, color, null);
     }
 
     public List<Sizes> getSizes() {
@@ -51,23 +50,28 @@ public class Clothes extends Item {
     }
 
     public void addSize(Sizes size, int index) {
-        Sizes s = null;
         if (sizes.size() > 0) {
-            s = sizes.get(index);
             sizes.add(index, size);
         } else {
             sizes.add(size);
         }
-        support.fireIndexedPropertyChange(String.valueOf(PROP_SIZES_ADD), index, s, size);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_SIZES_ADD), index, null, size);
     }
 
-    public void removeSize(int index) {
-        Sizes s = sizes.get(index);
-        sizes.remove(index);
-        support.fireIndexedPropertyChange(String.valueOf(PROP_SIZES_REMOVE), index, s, null);
+    public void removeSize(Sizes size) {
+        int index = sizes.indexOf(size);
+        sizes.remove(size);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_SIZES_REMOVE), index, size, null);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {
-        support.addPropertyChangeListener(propertyChangeListener);
+        getSupport().addPropertyChangeListener(propertyChangeListener);
+    }
+
+    private PropertyChangeSupport getSupport() {
+        if (support == null) {
+            support = new PropertyChangeSupport(this);
+        }
+        return support;
     }
 }

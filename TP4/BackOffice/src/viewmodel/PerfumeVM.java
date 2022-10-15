@@ -13,18 +13,18 @@ import java.util.ArrayList;
 
 public class PerfumeVM extends ItemVM implements PropertyChangeListener {
 
-    private Perfume model;
+    private final Perfume model;
 
     ObservableList<String> fragrancesObs = FXCollections.observableList(new ArrayList<>());
-    private ListProperty<String> fragrances = new SimpleListProperty<>(fragrancesObs);
+    private final ListProperty<String> fragrances = new SimpleListProperty<>(fragrancesObs);
         public ObservableList<String> getFragrances() { return fragrances.get(); }
         public ListProperty<String> fragrancesProperty() { return fragrances; }
         public void setFragrances(ObservableList<String> fragrances) { this.fragrances.set(fragrances); }
 
 
     public PerfumeVM(Perfume perfume) {
-        super(perfume.getName(), perfume.getPrice());
-        perfume.getFlagrance().forEach((flagrance -> fragrances.add(flagrance)));
+        super(perfume);
+        fragrances.addAll(perfume.getFlagrance());
         model = perfume;
         model.addListener(this);
     }
@@ -33,8 +33,8 @@ public class PerfumeVM extends ItemVM implements PropertyChangeListener {
         model.addFlagrance(str, 0);
     }
 
-    public void removeFragrance(int index) {
-        model.removeFlagrance(index);
+    public void removeFragrance(String str) {
+        model.removeFlagrance(str);
     }
 
     @Override
