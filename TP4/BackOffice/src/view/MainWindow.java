@@ -72,6 +72,7 @@ public class MainWindow {
         itemsListView.getSelectionModel().selectedItemProperty().addListener((__, oldV, newV) -> {
             if (newV instanceof ClothesVM) {
                 setDetail(clothesUC);
+                ((ClothesUC) clothesUC).setViewModel((ClothesVM) newV);
             } else if (newV instanceof PerfumeVM) {
                 setDetail(perfumeUC);
                 ((PerfumeUC) perfumeUC).setViewModel((PerfumeVM) newV);

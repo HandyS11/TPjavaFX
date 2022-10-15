@@ -6,24 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ItemUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/PerfumeUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/PerfumeUC.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Clothes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clothes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Perfume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Perfume.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ClothesUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ItemUC.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PerfumeUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PerfumeUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,15 +39,6 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
-  }
-}</component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="launch.Launcher" />

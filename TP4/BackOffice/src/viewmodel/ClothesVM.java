@@ -5,6 +5,7 @@ import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import model.Clothes;
+import model.Color;
 import utils.Sizes;
 
 import java.beans.IndexedPropertyChangeEvent;
@@ -37,6 +38,23 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
         clothes.getSizes().forEach((size -> sizes.add(size)));
         model = clothes;
         model.addListener(this);
+    }
+
+    public void addColor() {    // To fix
+        Color color = new Color(0, 0, 0);
+        model.addColor(color, 0);
+    }
+
+    public void removeColor(int index) {
+        model.removeColor(index);
+    }
+
+    public void addSize(Object size) {      // To fix
+        model.addSize((Sizes) size, 0);
+    }
+
+    public void removeSize(int index) {
+        model.removeSize(index);
     }
 
     @Override

@@ -30,31 +30,41 @@ public class Clothes extends Item {
     }
 
     public void addColor(Color color, int index) {
-        Color c = colors.get(index);
-        colors.add(color);
+        Color c = null;
+        if (colors.size() > 0 ) {
+            c = colors.get(index);
+            colors.add(index, color);
+        } else {
+            colors.add(color);
+        }
         support.fireIndexedPropertyChange(String.valueOf(PROP_COLORS_ADD), index, c, color);
-    }   // prendre en compte le cas index = 0
+    }
 
-    public void removeColor(Color color, int index) {
+    public void removeColor(int index) {
         Color c = colors.get(index);
-        colors.remove(color);
-        support.fireIndexedPropertyChange(String.valueOf(PROP_COLORS_REMOVE), index, color, c);
-    }   // same
+        colors.remove(index);
+        support.fireIndexedPropertyChange(String.valueOf(PROP_COLORS_REMOVE), index, c, null);
+    }
 
     public List<Sizes> getSizes() {
         return Collections.unmodifiableList(sizes);
     }
 
     public void addSize(Sizes size, int index) {
-        Sizes s = sizes.get(index);
-        sizes.add(size);
+        Sizes s = null;
+        if (sizes.size() > 0) {
+            s = sizes.get(index);
+            sizes.add(index, size);
+        } else {
+            sizes.add(size);
+        }
         support.fireIndexedPropertyChange(String.valueOf(PROP_SIZES_ADD), index, s, size);
     }
 
-    public void removeSize(Sizes size, int index) {
+    public void removeSize(int index) {
         Sizes s = sizes.get(index);
-        sizes.remove(size);
-        support.fireIndexedPropertyChange(String.valueOf(PROP_SIZES_REMOVE), index, s, size);
+        sizes.remove(index);
+        support.fireIndexedPropertyChange(String.valueOf(PROP_SIZES_REMOVE), index, s, null);
     }
 
     public void addListener(PropertyChangeListener propertyChangeListener) {
