@@ -6,7 +6,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.util.converter.NumberStringConverter;
-import view.part.ItemCell;
+import view.cell.ItemCell;
+import view.uc.ClothesUC;
+import view.uc.PerfumeUC;
 import viewmodel.ClothesVM;
 import viewmodel.ItemVM;
 import viewmodel.PerfumeVM;
@@ -53,10 +55,10 @@ public class MainWindow {
     }
 
     public void initialize() {
-        setupChoiceBox();
+        setupComboBox();
         instantiateUC();
         bindListViewAndMore();
-        //choiceBox.
+        bindItemList();
     }
 
     private void instantiateUC() {
@@ -92,8 +94,20 @@ public class MainWindow {
         itemsListView.getSelectionModel().select(0);
     }
 
-    private void setupChoiceBox() {
-        itemFilter.getItems().addAll("ALL", "Perfume", "Clothes");
+    private void bindItemList() {
+        itemFilter.getSelectionModel().selectedItemProperty().addListener((__, ___, newValue) -> {
+            if (newValue == "CLOTHES") {
+                viewModel.sortItemList("CLOTHES");
+            } else if (newValue == "PERFUME") {
+                viewModel.sortItemList("PERFUME");
+            } else {
+                viewModel.sortItemList(null);
+            }
+        });
+    }
+
+    private void setupComboBox() {
+        itemFilter.getItems().addAll("ALL", "CLOTHES", "PERFUME");
         itemFilter.getSelectionModel().select(0);
     }
 

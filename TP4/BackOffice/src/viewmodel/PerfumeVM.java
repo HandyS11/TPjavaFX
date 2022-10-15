@@ -15,7 +15,7 @@ public class PerfumeVM extends ItemVM implements PropertyChangeListener {
 
     private final Perfume model;
 
-    ObservableList<String> fragrancesObs = FXCollections.observableList(new ArrayList<>());
+    private final ObservableList<String> fragrancesObs = FXCollections.observableList(new ArrayList<>());
     private final ListProperty<String> fragrances = new SimpleListProperty<>(fragrancesObs);
         public ObservableList<String> getFragrances() { return fragrances.get(); }
         public ListProperty<String> fragrancesProperty() { return fragrances; }
@@ -24,7 +24,7 @@ public class PerfumeVM extends ItemVM implements PropertyChangeListener {
 
     public PerfumeVM(Perfume perfume) {
         super(perfume);
-        fragrances.addAll(perfume.getFlagrance());
+        fragrancesObs.addAll(perfume.getFlagrance());
         model = perfume;
         model.addListener(this);
     }
@@ -39,12 +39,21 @@ public class PerfumeVM extends ItemVM implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        super.propertyChange(evt);
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        if (e.getPropertyName().equals(String.valueOf(Perfume.PROP_FLAGRANCE_ADD))) {
-            fragrances.add(e.getIndex(), ((String) e.getNewValue()));
-        } else if (e.getPropertyName().equals(String.valueOf(Perfume.PROP_FLAGRANCE_REMOVE))) {
-            fragrances.remove(e.getIndex());
+        var newV = e.getNewValue();
+        var oldV = e.getOldValue();
+        var prop = e.getPropertyName();
+        var index = e.getIndex();
+
+        if (newV != null) {
+            if (prop.equals(String.valueOf(Perfume.PROP_FLAGRANCE_ADD))) {
+                fragrancesObs.add(index, ((String) e.getNewValue()));
+            }
+        }
+        if (oldV != null) {
+            if (prop.equals(String.valueOf(Perfume.PROP_FLAGRANCE_REMOVE))) {
+                fragrancesObs.remove(index);
+            }
         }
     }
 }

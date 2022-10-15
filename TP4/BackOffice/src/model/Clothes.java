@@ -31,7 +31,7 @@ public class Clothes extends Item implements Serializable {
     }
 
     public void addColor(Color color, int index) {
-        if (colors.size() > 0 ) {
+        if (colors.size() > 0) {
             colors.add(index, color);
         } else {
             colors.add(color);

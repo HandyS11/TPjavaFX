@@ -39,9 +39,8 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
         model.addListener(this);
     }
 
-    public void addColor(javafx.scene.paint.Color color) {    // To fix
-        Color c = new Color(color.getRed(), color.getGreen(), color.getBlue());
-        model.addColor(c, colors.size());
+    public void addColor(javafx.scene.paint.Color color) {
+        model.addColor(new Color(color.getRed(), color.getGreen(), color.getBlue()), colors.size());
     }
 
     public void removeColor(ColorVM colorVM) {
@@ -58,16 +57,25 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        super.propertyChange(evt);
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_COLORS_ADD))) {
-            colorsObs.add(e.getIndex(), (ColorVM) e.getNewValue());
-        } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_COLORS_REMOVE))) {
-            colorsObs.remove(e.getIndex());
-        } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_SIZES_ADD))) {
-            sizesObs.add(e.getIndex(), (Sizes) e.getNewValue());
-        } else if (e.getPropertyName().equals(String.valueOf(Clothes.PROP_SIZES_REMOVE))) {
-            sizesObs.remove(e.getIndex());
+        var newV = e.getNewValue();
+        var oldV = e.getOldValue();
+        var prop = e.getPropertyName();
+        var index = e.getIndex();
+
+        if (newV != null) {
+            if (prop.equals(String.valueOf(Clothes.PROP_COLORS_ADD))) {
+                colorsObs.add(index, new ColorVM((Color) newV));
+            } else if (prop.equals(String.valueOf(Clothes.PROP_SIZES_ADD))) {
+                sizesObs.add(index, (Sizes) newV);
+            }
+        }
+        if (oldV != null) {
+            if (prop.equals(String.valueOf(Clothes.PROP_COLORS_REMOVE))) {
+                colorsObs.remove(index);
+            } else if (prop.equals(String.valueOf(Clothes.PROP_SIZES_REMOVE))) {
+                sizesObs.remove(index);
+            }
         }
     }
 }

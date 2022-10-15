@@ -19,7 +19,6 @@ import java.util.ArrayList;
 
 public class ProductsVM implements PropertyChangeListener {
 
-
     private Products model;
 
     private final ObservableList<ItemVM> itemsObs = FXCollections.observableList(new ArrayList<>());
@@ -62,6 +61,16 @@ public class ProductsVM implements PropertyChangeListener {
 
     public void deleteItem(ItemVM item) {
         model.removeItem(item.getModel());
+    }
+
+    public void sortItemList(String type) {
+        if (type == "CLOTHES") {
+            filteredList.setPredicate(itemVM -> itemVM instanceof ClothesVM);
+        } else if (type == "PERFUME") {
+            filteredList.setPredicate(itemVM -> itemVM instanceof PerfumeVM);
+        } else {
+            filteredList.setPredicate(null);
+        }
     }
 
     @Override

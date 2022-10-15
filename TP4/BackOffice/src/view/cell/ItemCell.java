@@ -1,4 +1,4 @@
-package view.part;
+package view.cell;
 
 import javafx.scene.control.ListCell;
 import viewmodel.ItemVM;

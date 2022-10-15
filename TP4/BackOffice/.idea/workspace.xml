@@ -4,28 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="Add some binds">
-      <change afterPath="$PROJECT_DIR$/save.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/FileLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/FileSaver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/data/IDataSaver.java" afterDir="false" />
+    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="Add save.bin file (== stub)">
+      <change afterPath="$PROJECT_DIR$/rsrc/FXML/UC/ColorUC.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/cell/ColorCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/view/uc/ColorUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/IDataLoader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/IDataLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Stub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Stub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/launch/Launcher.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/launch/Launcher.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/save.bin" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Clothes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clothes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Color.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Item.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/model/Perfume.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Perfume.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Products.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Products.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ClothesUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/uc/ClothesUC.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/PerfumeUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/PerfumeUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/PerfumeUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/uc/PerfumeUC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/part/ItemCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/cell/ItemCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ItemVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" afterDir="false" />
     </list>
@@ -39,6 +33,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -56,6 +51,11 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "last_opened_file_path": "D:/Users/valen/Desktop/Private/DEVELOPPEMENT/JAVA/CorrectionsTP/Programmation_objets_Evaluation_2"
+  }
+}]]></component>
   <component name="RunManager">
     <configuration name="Launcher" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="launch.Launcher" />
@@ -82,7 +82,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665838144893</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Add persistance + fix binding">
+      <created>1665851820902</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665851820902</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Add save.bin file (== stub)">
+      <created>1665851850883</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1665851850883</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -99,7 +113,9 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Add some binds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add some binds" />
+    <MESSAGE value="Add persistance + fix binding" />
+    <MESSAGE value="Add save.bin file (== stub)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add save.bin file (== stub)" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

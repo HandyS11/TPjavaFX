@@ -1,12 +1,12 @@
-package view;
+package view.uc;
 
-import javafx.css.Size;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.*;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import utils.Sizes;
+import view.cell.ColorCell;
 import viewmodel.ClothesVM;
 import viewmodel.ColorVM;
 
@@ -32,12 +32,17 @@ public class ClothesUC extends VBox {
     private VBox clothesUC;
 
     @FXML
-    private Button addColorButton, removeColorButton, addSizeButton, removeSizeButton;
+    private Button addColorButton, removeColorButton, addSizeButton, removeSizeButton, deselectColorButton;
 
     @FXML
     private void addColor() {
         Color c = colorPicker.getValue();
         viewModel.addColor(c);
+    }
+
+    @FXML
+    private void deselectColor() {
+        colorsListView.getSelectionModel().select(-1);
     }
 
     @FXML
@@ -65,8 +70,6 @@ public class ClothesUC extends VBox {
     public void initialize() {
         setupSizeSelector();
 
-        addSizeButton.disableProperty().bind(sizeSelector.getSelectionModel().selectedItemProperty().isEqualTo(-1));
-
         removeColorButton.disableProperty().bind(colorsListView.getSelectionModel().selectedIndexProperty().isEqualTo(-1));
         removeSizeButton.disableProperty().bind(sizesListView.getSelectionModel().selectedIndexProperty().isEqualTo(-1));
     }
@@ -75,7 +78,7 @@ public class ClothesUC extends VBox {
         viewModel = clothesVM;
 
         colorsListView.itemsProperty().bind(viewModel.colorsProperty());
-        //colorsListView.setCellFactory(__ -> new ColorCell());
+        colorsListView.setCellFactory(__ -> new ColorCell());
 
         sizesListView.itemsProperty().bind(viewModel.sizesProperty());
     }

@@ -25,14 +25,12 @@ public class Perfume extends Item implements Serializable {
     }
 
     public void addFlagrance(String str, int index) {
-        String s = null;
         if (flagrance.size() > 0) {
-            s = flagrance.get(index);
             flagrance.add(index, str);
         } else {
             flagrance.add(str);
         }
-        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_ADD), index, s, str);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_FLAGRANCE_ADD), index, null, str);
     }
 
     public void removeFlagrance(String str) {
