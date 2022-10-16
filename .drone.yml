@@ -1,0 +1,14 @@
+kind: pipeline
+type: docker
+name: default
+ 
+trigger:
+  event:
+    - push
+
+steps:
+  - name: build-1
+    image: openjdk:18-jdk
+    commands:
+      - cd TP1/MyFirstApp
+      - javac -d bin -sourcepath src src/launch/Launcher.java --add-modules javafx.controls, javafx.fxml
