@@ -4,26 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="Add save.bin file (== stub)">
-      <change afterPath="$PROJECT_DIR$/src/model/MineColor.java" afterDir="false" />
+    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="Add save.bin file">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/MainWindow.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ClothesUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/ColorUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/BackOffice/FXML/UC/PerfumeUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/MainWindow.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/ClothesUC.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/ColorUC.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/rsrc/FXML/UC/PerfumeUC.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/rsrc/FXML/UC/PerfumeUC.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/save.bin" beforeDir="false" afterPath="$PROJECT_DIR$/save.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/data/Stub.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/data/Stub.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Clothes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Clothes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Color.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/cell/ColorCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/cell/ColorCell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/uc/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/uc/ClothesUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/uc/ColorUC.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ColorVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +80,21 @@
       <option name="project" value="LOCAL" />
       <updated>1665851850883</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="It works almost perfectly (fuck JFX colors) ;)">
+      <created>1665938407615</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665938407615</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Add save.bin file">
+      <created>1665938425581</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665938425581</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -112,7 +113,9 @@
     <MESSAGE value="Add some binds" />
     <MESSAGE value="Add persistance + fix binding" />
     <MESSAGE value="Add save.bin file (== stub)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add save.bin file (== stub)" />
+    <MESSAGE value="It works almost perfectly (fuck JFX colors) ;)" />
+    <MESSAGE value="Add save.bin file" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add save.bin file" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

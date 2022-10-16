@@ -40,14 +40,18 @@ public class PerfumeVM extends ItemVM implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        var newV = e.getNewValue();
-        var oldV = e.getOldValue();
-        var prop = e.getPropertyName();
-        var index = e.getIndex();
+        String newV = (String) e.getNewValue();
+        String oldV = (String) e.getOldValue();
+        String prop = e.getPropertyName();
+        int index = e.getIndex();
 
+        actions(newV, oldV, prop, index);
+    }
+
+    private void actions(String newV, String oldV, String prop, int index) {
         if (newV != null) {
             if (prop.equals(String.valueOf(Perfume.PROP_FLAGRANCE_ADD))) {
-                fragrancesObs.add(index, ((String) e.getNewValue()));
+                fragrancesObs.add(index, newV);
             }
         }
         if (oldV != null) {

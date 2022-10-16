@@ -76,24 +76,30 @@ public class ProductsVM implements PropertyChangeListener {
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
         IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        var newV = e.getNewValue();
-        var oldV = e.getOldValue();
-        var prop = e.getPropertyName();
+        Item newV = (Item) e.getNewValue();
+        Item oldV = (Item) e.getOldValue();
+        String prop = e.getPropertyName();
+        int index = e.getIndex();
 
+        actions(newV, oldV, prop, index);
+
+        if (oldV != null) {
+            if (prop.equals(String.valueOf(Products.PROP_ITEMS_REMOVE))) {
+                itemsObs.remove(index);
+            }
+        }
+    }
+
+    private void actions(Item newV, Item oldV, String prop, int index) {
         if (newV != null) {
             if (newV instanceof Clothes) {
                 if (prop.equals(String.valueOf(Products.PROP_ITEMS_ADD))) {
-                    itemsObs.add(e.getIndex(), new ClothesVM((Clothes) newV));
+                    itemsObs.add(index, new ClothesVM((Clothes) newV));
                 }
             } else if (newV instanceof Perfume) {
                 if (prop.equals(String.valueOf(Products.PROP_ITEMS_ADD))) {
-                    itemsObs.add(e.getIndex() , new PerfumeVM((Perfume) newV));
+                    itemsObs.add(index , new PerfumeVM((Perfume) newV));
                 }
-            }
-        }
-        if (oldV != null) {
-            if (prop.equals(String.valueOf(Products.PROP_ITEMS_REMOVE))) {
-                itemsObs.remove(e.getIndex());
             }
         }
     }

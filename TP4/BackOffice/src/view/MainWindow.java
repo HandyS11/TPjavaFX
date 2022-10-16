@@ -82,16 +82,20 @@ public class MainWindow {
                 setDetail(perfumeUC);
                 ((PerfumeUC) perfumeUC).setViewModel((PerfumeVM) newV);
             }
-            if (oldV != null) {
-                itemName.textProperty().unbindBidirectional(oldV.nameProperty());
-                itemPrice.textProperty().unbindBidirectional(oldV.priceProperty());
-            }
-            if (newV != null) {
-                itemName.textProperty().bindBidirectional(newV.nameProperty());
-                itemPrice.textProperty().bindBidirectional(newV.priceProperty(), new NumberStringConverter());
-            }
+            actions(newV, oldV);
         });
         itemsListView.getSelectionModel().select(0);
+    }
+
+    private void actions(ItemVM newV, ItemVM oldV) {
+        if (oldV != null) {
+            itemName.textProperty().unbindBidirectional(oldV.nameProperty());
+            itemPrice.textProperty().unbindBidirectional(oldV.priceProperty());
+        }
+        if (newV != null) {
+            itemName.textProperty().bindBidirectional(newV.nameProperty());
+            itemPrice.textProperty().bindBidirectional(newV.priceProperty(), new NumberStringConverter());
+        }
     }
 
     private void bindItemList() {
