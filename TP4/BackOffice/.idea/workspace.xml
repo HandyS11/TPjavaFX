@@ -4,13 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="Add save.bin file">
+    <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="Resizing methode length">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/save.bin" beforeDir="false" afterPath="$PROJECT_DIR$/save.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/PerfumeVM.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ProductsVM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665938425581</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Resizing methode length">
+      <created>1665949885620</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1665949885620</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -115,7 +117,8 @@
     <MESSAGE value="Add save.bin file (== stub)" />
     <MESSAGE value="It works almost perfectly (fuck JFX colors) ;)" />
     <MESSAGE value="Add save.bin file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add save.bin file" />
+    <MESSAGE value="Resizing methode length" />
+    <option name="LAST_COMMIT_MESSAGE" value="Resizing methode length" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
