@@ -17,45 +17,37 @@ public class Clothes extends Item implements Serializable {
     public static final UUID PROP_SIZES_ADD = UUID.randomUUID();
     public static final UUID PROP_SIZES_REMOVE = UUID.randomUUID();
 
-    private List<Color> colors;
+    private List<MineColor> mineColors;
     private List<Sizes> sizes;
 
-    public Clothes(String name, int price, List<Color> colors, List<Sizes> sizes) {
+    public Clothes(String name, int price, List<MineColor> mineColors, List<Sizes> sizes) {
         super(name, price);
-        this.colors = colors;
+        this.mineColors = mineColors;
         this.sizes = sizes;
     }
 
-    public List<Color> getColors() {
-        return Collections.unmodifiableList(colors);
+    public List<MineColor> getColors() {
+        return Collections.unmodifiableList(mineColors);
     }
 
-    public void addColor(Color color, int index) {
-        if (colors.size() > 0) {
-            colors.add(index, color);
-        } else {
-            colors.add(color);
-        }
-        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_COLORS_ADD), index, null, color);
+    public void addColor(MineColor mineColor) {
+        mineColors.add(mineColor);
+        getSupport().firePropertyChange(String.valueOf(PROP_COLORS_ADD), null, mineColor);
     }
 
-    public void removeColor(Color color) {
-        int index = colors.indexOf(color);
-        colors.remove(color);
-        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_COLORS_REMOVE), index, color, null);
+    public void removeColor(MineColor mineColor) {
+        int index = mineColors.indexOf(mineColor);
+        mineColors.remove(mineColor);
+        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_COLORS_REMOVE), index, mineColor, null);
     }
 
     public List<Sizes> getSizes() {
         return Collections.unmodifiableList(sizes);
     }
 
-    public void addSize(Sizes size, int index) {
-        if (sizes.size() > 0) {
-            sizes.add(index, size);
-        } else {
-            sizes.add(size);
-        }
-        getSupport().fireIndexedPropertyChange(String.valueOf(PROP_SIZES_ADD), index, null, size);
+    public void addSize(Sizes size) {
+        sizes.add(size);
+        getSupport().firePropertyChange(String.valueOf(PROP_SIZES_ADD), null, size);
     }
 
     public void removeSize(Sizes size) {

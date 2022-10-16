@@ -4,8 +4,9 @@ import javafx.beans.property.ListProperty;
 import javafx.beans.property.SimpleListProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.paint.Color;
 import model.Clothes;
-import model.Color;
+import model.MineColor;
 import utils.Sizes;
 
 import java.beans.IndexedPropertyChangeEvent;
@@ -33,14 +34,14 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
 
     public ClothesVM(Clothes clothes) {
         super(clothes);
-        clothes.getColors().forEach((color -> colors.add(new ColorVM(new Color(color.getRed(), color.getGreen(), color.getBlue())))));
+        clothes.getColors().forEach((mineColor -> colors.add(new ColorVM(new MineColor(mineColor.getRed(), mineColor.getGreen(), mineColor.getBlue())))));
         sizes.addAll(clothes.getSizes());
         model = clothes;
         model.addListener(this);
     }
 
-    public void addColor(javafx.scene.paint.Color color) {
-        model.addColor(new Color(color.getRed(), color.getGreen(), color.getBlue()), colors.size());
+    public void addColor(Color color) {
+        model.addColor(new MineColor((int) (color.getRed() * 255), (int) (color.getGreen() * 255), (int) (color.getBlue()) * 255));
     }
 
     public void removeColor(ColorVM colorVM) {
@@ -48,7 +49,7 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
     }
 
     public void addSize(Object size) {
-        model.addSize((Sizes) size, sizes.size());
+        model.addSize((Sizes) size);
     }
 
     public void removeSize(Sizes size) {
@@ -57,20 +58,20 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent evt) {
-        IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
-        var newV = e.getNewValue();
-        var oldV = e.getOldValue();
-        var prop = e.getPropertyName();
-        var index = e.getIndex();
+        var newV = evt.getNewValue();
+        var oldV = evt.getOldValue();
+        var prop = evt.getPropertyName();
 
         if (newV != null) {
             if (prop.equals(String.valueOf(Clothes.PROP_COLORS_ADD))) {
-                colorsObs.add(index, new ColorVM((Color) newV));
+                colorsObs.add(new ColorVM((MineColor) newV));
             } else if (prop.equals(String.valueOf(Clothes.PROP_SIZES_ADD))) {
-                sizesObs.add(index, (Sizes) newV);
+                sizesObs.add((Sizes) newV);
             }
         }
         if (oldV != null) {
+            IndexedPropertyChangeEvent e = (IndexedPropertyChangeEvent) evt;
+            var index = e.getIndex();
             if (prop.equals(String.valueOf(Clothes.PROP_COLORS_REMOVE))) {
                 colorsObs.remove(index);
             } else if (prop.equals(String.valueOf(Clothes.PROP_SIZES_REMOVE))) {

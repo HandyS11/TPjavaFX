@@ -47,21 +47,21 @@ public class Stub implements IDataLoader {
         sizes3.add(Sizes.M);
         sizes3.add(Sizes.XXL);
 
-        List<Color> colors1 = new ArrayList<>();
-        List<Color> colors2 = new ArrayList<>();
-        List<Color> colors3 = new ArrayList<>();
+        List<MineColor> colors1 = new ArrayList<>();
+        List<MineColor> colors2 = new ArrayList<>();
+        List<MineColor> colors3 = new ArrayList<>();
 
-        colors1.add(new Color(1, 0, 0));
-        colors1.add(new Color(1, 1, 0));
-        colors1.add(new Color(1, 0, 1));
+        colors1.add(new MineColor(255, 0, 0));
+        colors1.add(new MineColor(255, 255, 0));
+        colors1.add(new MineColor(255, 0, 255));
 
-        colors2.add(new Color(0, 1, 0));
-        colors2.add(new Color(0, 0.5, 0));
-        colors2.add(new Color(0, 0.5, 1));
+        colors2.add(new MineColor(0, 255, 0));
+        colors2.add(new MineColor(0, 128, 0));
+        colors2.add(new MineColor(0, 128, 255));
 
-        colors3.add(new Color(0, 0, 0));
-        colors3.add(new Color(0.5, 1, 0));
-        colors3.add(new Color(0.25, 0.25, 0.5));
+        colors3.add(new MineColor(0, 0, 0));
+        colors3.add(new MineColor(128, 255, 0));
+        colors3.add(new MineColor(64, 64, 128));
 
 
         items.add(new Perfume("Good smell", 100, fragrances1));

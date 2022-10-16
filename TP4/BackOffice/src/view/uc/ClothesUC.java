@@ -36,8 +36,7 @@ public class ClothesUC extends VBox {
 
     @FXML
     private void addColor() {
-        Color c = colorPicker.getValue();
-        viewModel.addColor(c);
+        viewModel.addColor(colorPicker.getValue());
     }
 
     @FXML

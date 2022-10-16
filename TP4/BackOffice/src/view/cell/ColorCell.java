@@ -1,10 +1,8 @@
 package view.cell;
 
 import javafx.scene.control.ListCell;
-import view.uc.ColorUC;
+import javafx.scene.shape.Rectangle;
 import viewmodel.ColorVM;
-
-import java.io.IOException;
 
 public class ColorCell extends ListCell<ColorVM> {
 
@@ -12,15 +10,13 @@ public class ColorCell extends ListCell<ColorVM> {
     protected void updateItem(ColorVM item, boolean empty) {
         super.updateItem(item, empty);
         if (!empty) {
-            try {
-                ColorUC colorUC = new ColorUC(item);
-                setGraphic(colorUC);
-            } catch (IOException e) {
-                System.err.println(e);
-                textProperty().set("Error while loading ColorUC");
-            }
+            Rectangle rectangle = new Rectangle();
+            rectangle.fillProperty().bind(item.colorProperty());
+            rectangle.setHeight(50);
+            rectangle.setWidth(150);
+            setGraphic(rectangle);
         } else {
-            setText("");
+            setGraphic(null);
         }
     }
 }
