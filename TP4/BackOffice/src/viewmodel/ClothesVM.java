@@ -21,7 +21,7 @@ public class ClothesVM extends ItemVM implements PropertyChangeListener {
     private final ObservableList<ColorVM> colorsObs = FXCollections.observableList(new ArrayList<>());
     private final ListProperty<ColorVM> colors = new SimpleListProperty<>(colorsObs);
 
-    public ObservableList<ColorVM> getColors() { return colors.get(); }
+        public ObservableList<ColorVM> getColors() { return colors.get(); }
         public ListProperty<ColorVM> colorsProperty() { return colors; }
         public void setColors(ObservableList<ColorVM> colors) { this.colors.set(colors); }
 
