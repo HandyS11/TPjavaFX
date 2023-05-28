@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="3b88fa15-cb00-4fd1-aa80-11d107910419" name="Changes" comment="Resizing methode length">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/model/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/model/Item.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/uc/ClothesUC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/uc/ClothesUC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/viewmodel/ClothesVM.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
